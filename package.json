@@ -1,0 +1,12 @@
+{
+  "name": "westie-dev-pnpm",
+  "version": "1.0.0",
+  "description": "Monorepo with Nx and pnpm Workspaces",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mark L. Wood-Patrick",
+  "license": "MIT"
+}
