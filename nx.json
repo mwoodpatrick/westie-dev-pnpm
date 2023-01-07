@@ -1,0 +1,47 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build"
+        ],
+        "accessToken": "NWUwZThmOWItMTQyOC00NjZhLTgxY2QtYzBkZWQ2ZGZmMDNkfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "namedInputs": {
+    "noMarkdown": [
+      "!{projectRoot}/**/*.md"
+    ]
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": [
+        "noMarkdown",
+        "^noMarkdown"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "dependsOn": [
+        "^build",
+        "pre-build"
+      ]
+    },
+    "dev": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "noMarkdown"
+      ],
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  },
+  "defaultBase": "main"
+}
