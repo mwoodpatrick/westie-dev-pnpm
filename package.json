@@ -3,5 +3,9 @@
   "private": true,
   "scripts": {},
   "author": "Juri Strumpflohner",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "@nrwl/nx-cloud": "^14.4.1",
+    "nx": "^14.5.6"
+  }
 }
