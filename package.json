@@ -5,7 +5,13 @@
   "author": "Juri Strumpflohner",
   "license": "MIT",
   "devDependencies": {
-    "@nrwl/nx-cloud": "^14.4.1",
-    "nx": "^14.5.6"
+    "@babel/core": "^7.20.12",
+    "@nrwl/express": "^15.4.5",
+    "@nrwl/nx-cloud": "^15.0.2",
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.26",
+    "nx": "^15.4.5",
+    "typescript": "^4.9.4"
   }
 }

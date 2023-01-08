@@ -16,9 +16,11 @@
     "shared-ui": "workspace:*"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "@remix-run/dev": "^1.6.8",
     "@remix-run/eslint-config": "^1.6.8",
-    "@types/react": "^18.0.15",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "eslint": "^8.20.0",
     "typescript": "^4.7.4"
