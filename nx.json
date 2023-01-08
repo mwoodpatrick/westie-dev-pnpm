@@ -36,7 +36,14 @@
     },
     "test": {
       "inputs": [
-        "noMarkdown"
+        "noMarkdown",
+        "{workspaceRoot}/jest.preset.js"
+      ]
+    },
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json"
       ]
     }
   }
