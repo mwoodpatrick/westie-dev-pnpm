@@ -1,0 +1,9 @@
+# cluster-config.yml
+# https://kind.sigs.k8s.io/docs/user/using-wsl2/
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: app-1-cluster-master-slave-slave
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
