@@ -1,0 +1,3 @@
+[submodule "apps/nginx-example"]
+	path = apps/nginx-example
+	url = https://github.com/mwoodpatrick/learn-terraform-docker-container.git
