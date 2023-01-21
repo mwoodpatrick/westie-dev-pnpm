@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-sql
+  labels:
+    app: wordpress
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: wordpress
+    tier: sql
+  clusterIP: None
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sql-pv-claim
+  labels:
+    app: wordpress
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-sql
+  labels:
+    app: wordpress
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: sql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: sql
+    spec:
+      containers:
+      - image: mariadb:latest 
+        name: sql
+        env:
+        - name: sql_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sql-pass
+              key: password
+        ports:
+        - containerPort: 3306
+          name: sql
+        volumeMounts:
+        - name: sql-persistent-storage
+          mountPath: /var/lib/sql
+      volumes:
+      - name: sql-persistent-storage
+        persistentVolumeClaim:
+          claimName: sql-pv-claim
