@@ -3,6 +3,8 @@ secretGenerator:
   literals:
   - password=MySQLPasssword2Use2Day34967#@
 resources:
+  - ingress-nginx-deployment.yaml
+  - westie.yaml
   - nginx-deployment.yaml
   - sql-deployment.yaml
   - wordpress-deployment.yaml
