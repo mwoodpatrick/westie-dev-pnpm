@@ -1,17 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress-service
+  name: wordpress
   labels:
     app: wordpress
 spec:
-  type: NodePort
   ports:
     - port: 80
-      nodePort: 30001
   selector:
     app: wordpress
     tier: frontend
+  type: LoadBalancer
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -46,7 +45,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:php8.2-fpm
+      - image: wordpress:4.8-apache
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
