@@ -1,3 +1,6 @@
 [submodule "apps/nginx-example"]
 	path = apps/nginx-example
 	url = https://github.com/mwoodpatrick/learn-terraform-docker-container.git
+[submodule "kube/dockerwordpress"]
+	path = kube/dockerwordpress
+	url = https://github.com/mwoodpatrick/dockerwordpress.git
