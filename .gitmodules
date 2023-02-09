@@ -4,3 +4,6 @@
 [submodule "kube/dockerwordpress"]
 	path = kube/dockerwordpress
 	url = https://github.com/mwoodpatrick/dockerwordpress.git
+[submodule "apps/FibonacciSample"]
+	path = apps/FibonacciSample
+	url = https://github.com/oshokry/FibonacciSample.git
