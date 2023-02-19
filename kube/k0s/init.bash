@@ -15,6 +15,10 @@ echo "K0S_HOME=${K0S_HOME}"
 function k0s_configure {
     export K0S_DIR=${HOME}/.k0s
 
+    unset KUBECONFIG
+    
+    alias kubectl='f(){ sudo k0s kubectl "$@";  unset -f f; }; f'
+
 	mkdir -p ${K0S_DIR}
 
 	# check if k0s installed
@@ -71,11 +75,17 @@ function k0s_status {
     k0s_dependency_issues
 }
 
-function k0s_configure {
+function k0s_update_configuration {
     mkdir -p /etc/k0s
 
     sudo cp ${K0S_HOME}/k0s.yaml /etc/k0s
     # runtime values in /run/k0s/k0s.yaml
+
+    echo "updating k0s config in /etc/k0s from ${K0S_HOME}/k0s.yaml"
+
+    sudo k0s stop
+    sudo k0s start
+    sudo k0s status
 }
 
 function k0s_remove {

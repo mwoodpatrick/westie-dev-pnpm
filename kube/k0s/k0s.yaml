@@ -20,8 +20,29 @@ spec:
   controllerManager: {}
   extensions:
     helm:
-      charts: null
-      repositories: null
+      repositories:
+      - name: traefik
+        url: https://traefik.github.io/charts
+      - name: bitnami
+        url: https://charts.bitnami.com/bitnami
+      charts:
+      - name: traefik
+        chartname: traefik/traefik
+        # https://artifacthub.io/packages/helm/traefik/traefik/21.1.0 (15 Feb, 2023)
+        version: "21.10"
+        namespace: default
+      - name: metallb
+        chartname: bitnami/metallb
+        # https://artifacthub.io/packages/helm/bitnami/metallb (17 Feb, 2023)
+        version: "2.5.4"
+        namespace: default
+        values: |2
+          configInline:
+            address-pools:
+            - name: generic-cluster-pool
+              protocol: layer2
+              addresses:
+              - 192.168.0.5-192.168.0.10
     storage:
       create_default_storage_class: false
       type: external_storage
