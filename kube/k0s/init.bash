@@ -3,6 +3,14 @@
 # [Documentation (k0sproject.io)](https://docs.k0sproject.io/v1.26.1+k0s.0/)
 # [k0sproject/k0s: k0s - The Zero Friction Kubernetes (github.com)](https://github.com/k0sproject/k0s)
 # [k0s vs k3s - Search (bing.com)](https://www.bing.com/search?q=k0s+vs+k3s&form=ANNTH1&refig=4d041ab62acb4b2584a82f8beea6f252&sp=1&qs=LT&pq=k0s+&sc=10-4&cvid=4d041ab62acb4b2584a82f8beea6f252)
+#
+# Data Directory for k0s (default: /var/lib/k0s)
+#   bin  containerd  db  images  kubelet  kubelet-config.yaml  kubelet.conf  manifests  pki  worker-profile.yaml
+# 
+
+echo "BASH_SOURCE=${BASH_SOURCE[0]}"
+export K0S_HOME=`dirname $(realpath ${BASH_SOURCE[0]})`
+echo "K0S_HOME=${K0S_HOME}"
 
 function k0s_configure {
     export K0S_DIR=${HOME}/.k0s
@@ -44,6 +52,11 @@ function k0s_configure {
     . "$K0S_DIR/bash_completion" # This loads k0s bash_completion
 }
 
+function k0s_dependency_issues {
+    # check for any dependency issues
+    k0s sysinfo|grep -v pass
+}
+
 # Check service, logs and k0s status
 function k0s_status {
 	echo "k0s version: $(k0s version)"
@@ -54,6 +67,15 @@ function k0s_status {
 
 	# Access your cluster using kubectl
 	sudo k0s kubectl get nodes
+
+    k0s_dependency_issues
+}
+
+function k0s_configure {
+    mkdir -p /etc/k0s
+
+    sudo cp ${K0S_HOME}/k0s.yaml /etc/k0s
+    # runtime values in /run/k0s/k0s.yaml
 }
 
 function k0s_remove {
