@@ -4,12 +4,10 @@
 # [k0sproject/k0s: k0s - The Zero Friction Kubernetes (github.com)](https://github.com/k0sproject/k0s)
 # [k0s vs k3s - Search (bing.com)](https://www.bing.com/search?q=k0s+vs+k3s&form=ANNTH1&refig=4d041ab62acb4b2584a82f8beea6f252&sp=1&qs=LT&pq=k0s+&sc=10-4&cvid=4d041ab62acb4b2584a82f8beea6f252)
 
-export K0S_DIR=${HOME}/.k0s
-[ -s "$K0S_DIR/nvm.sh" ] && \. "$K0S_DIR/bash.sh"                  # This installs k0s
-[ -s "$K0S_DIR/bash_completion" ] && \. "$K0S_DIR/bash_completion" # This loads k0s bash_completion
+function k0s_configure {
+    export K0S_DIR=${HOME}/.k0s
 
-function k0s_install {
-	mkdir -p ${KOS_DIR}
+	mkdir -p ${K0S_DIR}
 
 	# check if k0s installed
 	if ! command -v k0s
@@ -18,39 +16,58 @@ function k0s_install {
 		curl -sSLf https://get.k0s.sh | sudo sh
 	fi
 
-	k0s version
+    if ! systemctl --all --type service | grep -q "k0s";then
+        echo "installing k0s service."
+
+	    # Install k0s as a service 
+        # /etc/systemd/system/k0scontroller.service
+
+	    sudo k0s install controller --single
+
+	    # Start k0s as a service
+	    sudo k0s start
+    fi
 
 	if ! command -v k0sctl
 	then
-		# install k0sctl
+		echo install k0sctl
 		go install github.com/k0sproject/k0sctl@latest
 	fi
 
-	# install kosctl
-	k0sctl version
-
 	# create bash completions
 
-	k0s completion bash > ${kos_dir}/bash_completion
-	k0sctl completion >> ${kos_dir}/bash_completion
+    if [ -f "${K0S_DIR}/bash_completion" ]; then
+	    k0s completion bash > ${K0S_DIR}/bash_completion
+	    k0sctl completion >> ${K0S_DIR}/bash_completion
+    fi
 
-	# Install k0s as a service 
-	sudo k0s install controller --single
+    . "$K0S_DIR/bash_completion" # This loads k0s bash_completion
+}
 
-	# Start k0s as a service
-	sudo k0s start
+# Check service, logs and k0s status
+function k0s_status {
+	echo "k0s version: $(k0s version)"
+	echo "k0sctl $(k0sctl version)"
 
-	# Check service, logs and k0s status
-	sudo k0s status
-	systemctl status k0scontroller
+    sudo k0s status
+    sudo systemctl status k0scontroller
 
 	# Access your cluster using kubectl
 	sudo k0s kubectl get nodes
 }
 
 function k0s_remove {
-	sudo k0s stop
+    if [ $(ps | grep -v grep | grep k0s | wc -l) -gt 0 ]
+    then
+        echo "k3s is running!!!"
+	    sudo k0s stop
+    else
+        echo "k3s is not running!!!"
+    fi
+
 	sudo k0s reset
 
 	echo "Reboot system to complete removal"
 }
+
+k0s_configure
