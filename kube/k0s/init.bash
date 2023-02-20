@@ -101,5 +101,3 @@ function k0s_remove {
 
 	echo "Reboot system to complete removal"
 }
-
-k0s_configure
