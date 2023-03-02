@@ -1,0 +1,53 @@
+# k3d configuration file, saved as e.g. /home/me/myk3dcluster.yaml
+# k3d expands environment variables ($VAR or ${VAR}) unconditionally in the config file, even before processing it in any way.
+# k3d uses Cobra and Viper for CLI and general config handling respectively.
+# This automatically introduces a “config option order of priority” (precedence order):
+# ref:
+#   web site: https://k3d.io/v5.4.7/usage/configfile/
+#   k3d demo repository: https://github.com/iwilltry42/k3d-demo/blob/main/README.md#config-file-support
+#   SUSE Blog: https://www.suse.com/c/introduction-k3d-run-k3s-docker-src/ (Search for The “Configuration as Code” Way)
+#
+apiVersion: k3d.io/v1alpha4 # this will change in the future as we make everything more stable
+kind: Simple # internally, we also have a Cluster config, which is not yet available externally
+metadata:
+  name: westie-cluster # name that you want to give to your cluster (will still be prefixed with `k3d-`)
+servers: 1 # same as `--servers 1`
+agents: 2 # same as `--agents 2`
+kubeAPI: # same as `--api-port myhost.my.domain:6445` (where the name would resolve to 127.0.0.1)
+  hostIP: "127.0.0.1" # where the Kubernetes API will be listening on
+  hostPort: "6445" # where the Kubernetes API listening port will be mapped to on your host system
+# image: rancher/k3s:v1.20.4-k3s1 # same as `--image rancher/k3s:v1.20.4-k3s1`
+# network: my-custom-net # same as `--network my-custom-net`
+# subnet: "172.28.0.0/16" # same as `--subnet 172.28.0.0/16`
+token: superSecretToken # same as `--token superSecretToken`
+volumes: # repeatable flags are represented as YAML lists
+  - volume: ${PROJECTS_ROOT}:/mnt/projects # same as `--volume '/my/host/path:/path/in/node@server:0;agent:*'`
+    nodeFilters:
+      - server:0
+      - agent:*
+ports:
+  - port: 8080:80 # same as `--port '8080:80@loadbalancer'`
+    nodeFilters:
+      - loadbalancer
+env:
+  - envVar: PROJECTS_ROOT=/mnt/projects # same as `--env 'bar=baz@server:0'`
+    nodeFilters:
+      - server:0
+      - agent:*
+  - envVar: GIT_ROOT=/mnt/projects/git
+    nodeFilters:
+      - server:0
+      - agent:*
+options:
+  k3d: # k3d runtime settings
+    wait: true # wait for cluster to be usable before returining; same as `--wait` (default: true)
+    timeout: "60s" # wait timeout before aborting; same as `--timeout 60s`
+    disableLoadbalancer: false # same as `--no-lb`
+    disableImageVolume: false # same as `--no-image-volume`
+    disableRollback: false # same as `--no-Rollback`
+    loadbalancer:
+      configOverrides:
+        - settings.workerConnections=2048
+  kubeconfig:
+    updateDefaultKubeconfig: true # add new cluster to your default Kubeconfig; same as `--kubeconfig-update-default` (default: true)
+    switchCurrentContext: true # also set current-context to the new cluster's context; same as `--kubeconfig-switch-context` (default: true)
