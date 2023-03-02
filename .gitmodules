@@ -4,3 +4,12 @@
 [submodule "kube/dockerwordpress"]
 	path = kube/dockerwordpress
 	url = https://github.com/mwoodpatrick/dockerwordpress.git
+[submodule "apps/FibonacciSample"]
+	path = apps/FibonacciSample
+	url = https://github.com/oshokry/FibonacciSample.git
+[submodule "kube/kubectl/plugins/luksa_kubectl-plugins"]
+	path = kube/kubectl/plugins/luksa_kubectl-plugins
+	url = https://github.com/luksa/kubectl-plugins
+[submodule "kube/FibonacciSample"]
+	path = kube/FibonacciSample
+	url = https://github.com/mwoodpatrick/FibonacciSample.git
