@@ -1,0 +1,59 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+	// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+
+	// List of extensions which should be recommended for users of this workspace.
+	"recommendations": [
+        "asvetliakov.vscode-neovim",
+        "bradlc.vscode-tailwindcss",
+        "bungcip.better-toml",
+        "christian-kohler.npm-intellisense",
+        "coolbear.systemd-unit-file",
+        "dbaeumer.vscode-eslint",
+        "denoland.vscode-deno",
+        "digitalbrainstem.javascript-ejs-support",
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        "ecmel.vscode-html-css",
+        "esbenp.prettier-vscode",
+        "felipecaputo.git-project-manager",
+        "file-icons.file-icons",
+        "firsttris.vscode-jest-runner",
+        "foxundermoon.shell-format",
+        "github.copilot",
+        "github.vscode-pull-request-github",
+        "golang.go",
+        "googlecloudtools.cloudcode",
+        "graphql.vscode-graphql",
+        "graphql.vscode-graphql-syntax",
+        "hangxingliu.vscode-systemd-support",
+        "humao.rest-client",
+        "justjavac.vscode-deno-extensionpack",
+        "laurencebahiirwa.deno-std-lib-snippets",
+        "mads-hartmann.bash-ide-vscode",
+        "michelemelluso.code-beautifier",
+        "mindaro-dev.file-downloader",
+        "mindaro.mindaro",
+        "ms-azuretools.vscode-docker",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-vscode.makefile-tools",
+        "ms-vsliveshare.vsliveshare",
+        "mtxr.sqltools",
+        "nrwl.angular-console",
+        "pkief.material-icon-theme",
+        "prisma.prisma",
+        "redhat.vscode-yaml",
+        "ritwickdey.liveserver",
+        "rogalmic.bash-debug",
+        "shakram02.bash-beautify",
+        "silvenon.mdx",
+        "tomoki1207.pdf",
+        "tungvn.wordpress-snippet",
+        "xdebug.php-debug",
+        "xyc.vscode-mdx-preview",
+        "yzhang.markdown-all-in-one"
+    ],
+	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+	"unwantedRecommendations": [
+	]
+}

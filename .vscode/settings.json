@@ -1,0 +1,20 @@
+{
+    // Exclude files from the file watcher
+    // https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
+    // See https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options
+    "files.watcherExclude": {
+        "**/project": true
+    }
+
+
+    // Determines which settings editor to use by default.
+    //  - ui: Use the settings UI editor.
+    //  - json: Use the JSON file editor.
+    "workbench.settings.editor": "json",
+    "zenMode.centerLayout": false,
+    // Controls whether to use the split JSON editor when editing settings as JSON.
+    "workbench.settings.useSplitJSON": true,
+    // Use neovim installed in WSL. If you enable this setting, specify the path to the neovim executable installed i     n WSL `neovimExecutablePaths.linux` setting
+    "vscode-neovim.useWSL": true,
+    "vscode-neovim.neovimExecutablePaths.linux":"/usr/local/bin/nvim"
+}
