@@ -13,3 +13,6 @@
 [submodule "kube/FibonacciSample"]
 	path = kube/FibonacciSample
 	url = https://github.com/mwoodpatrick/FibonacciSample.git
+[submodule "kube/k3d/wordpress/wordpress-helm"]
+	path = kube/k3d/wordpress/wordpress-helm
+	url = https://github.com/mwoodpatrick/wordpress-helm
