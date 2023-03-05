@@ -16,3 +16,6 @@
 [submodule "kube/k3d/wordpress/wordpress-helm"]
 	path = kube/k3d/wordpress/wordpress-helm
 	url = https://github.com/mwoodpatrick/wordpress-helm
+[submodule "kube/k3d/wordpress/WordPress-Helm-Chart"]
+	path = kube/k3d/wordpress/WordPress-Helm-Chart
+	url = https://github.com/mwoodpatrick/WordPress-Helm-Chart.git
