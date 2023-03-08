@@ -19,3 +19,9 @@
 [submodule "kube/k3d/wordpress/WordPress-Helm-Chart"]
 	path = kube/k3d/wordpress/WordPress-Helm-Chart
 	url = https://github.com/mwoodpatrick/WordPress-Helm-Chart.git
+[submodule "packages/vscode-dev-containers"]
+	path = packages/vscode-dev-containers
+	url = https://github.com/mwoodpatrick/vscode-dev-containers.git
+[submodule "apps/workshop-astra-block"]
+	path = apps/workshop-astra-block
+	url = https://github.com/datastaxdevs/workshop-astra-block.git
