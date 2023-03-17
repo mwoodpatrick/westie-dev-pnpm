@@ -13,6 +13,9 @@
   "namedInputs": {
     "noMarkdown": [
       "!{projectRoot}/**/*.md"
+    ],
+    "production": [
+      "default"
     ]
   },
   "targetDefaults": {
