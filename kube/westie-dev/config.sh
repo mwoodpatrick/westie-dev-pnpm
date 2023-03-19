@@ -18,14 +18,12 @@
 # If you change a config here, it is recommended to restart the cluster with ./start.sh
 # to have everything aligned as there are some dependencies (unless you know what you are doing :-))
 #
-export NGINX_ENABLE="yes"
 export KUBERNETES_DASHBOARD_ENABLE="yes"
 
 #
 # Projecthome: the environment variable PROJECTHOME must be set to the directory where this config.sh file is located.
 
-cd ${GIT_ROOT}/westie-dev-pnpm/kube/westie-dev
-PROJECTHOME=$(dirname $(pwd))
+PROJECTHOME=${GIT_ROOT}/westie-dev-pnpm/kube/westie-dev
 
 if [ -z ${PROJECTHOME} ]; then
   echo "Please set the PROJECTHOME environment variable to the directory where the config file is."
@@ -40,14 +38,11 @@ fi
 # K3D Config
 export CLUSTER="westie-dev" # Cluster name
 export HTTPPORT=8080        # Port for HTTP access to Grafana/Prometheus/Alertmanager in this cluster
-export ISTIOPORT=8081       # For for HTTP through Istio
 [ -z ${KUBECONFIG} ] && export KUBECONFIG=~/.k3d/kubeconfig-${CLUSTER}.yaml   # the likely KUBECONFIG value
 
 # Helm chart versions
 # you can update when you know what you are doing 
-INGRESSNGINXCHART="4.0.17"         # see https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx
-FLUENTBITCHART="0.19.19"           # see https://artifacthub.io/packages/helm/fluent/fluent-bit
-NGINXCHART="9.7.6"                 # see https://artifacthub.io/packages/helm/bitnami/nginx
+KUBERNETESDASHBOARDCHART="6.0.6"  # see https://artifacthub.io/packages/helm/k8s-dashboard/kubernetes-dashboard
 
 ##########################################
 # Other settings you don't need to touch #
