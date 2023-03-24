@@ -1,3 +1,9 @@
 [submodule "kube/istio"]
 	path = kube/istio
 	url = https://github.com/mwoodpatrick/istio.git
+[submodule "images/westie-dev-image"]
+	path = images/westie-dev-image
+	url = https://github.com/mwoodpatrick/westie-dev-image.git
+[submodule "kube/k3d/k3d-demo"]
+	path = kube/k3d/k3d-demo
+	url = https://github.com/mwoodpatrick/k3d-demo.git
