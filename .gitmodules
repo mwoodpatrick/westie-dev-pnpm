@@ -7,3 +7,6 @@
 [submodule "kube/k3d/k3d-demo"]
 	path = kube/k3d/k3d-demo
 	url = https://github.com/mwoodpatrick/k3d-demo.git
+[submodule "kube/mariadb.org-tools"]
+	path = kube/mariadb.org-tools
+	url = https://github.com/MariaDB/mariadb.org-tools.git
