@@ -10,3 +10,30 @@
 [submodule "kube/mariadb.org-tools"]
 	path = kube/mariadb.org-tools
 	url = https://github.com/MariaDB/mariadb.org-tools.git
+[submodule "apps/nginx-example"]
+	path = apps/nginx-example
+	url = https://github.com/mwoodpatrick/learn-terraform-docker-container.git
+[submodule "kube/dockerwordpress"]
+	path = kube/dockerwordpress
+	url = https://github.com/mwoodpatrick/dockerwordpress.git
+[submodule "apps/FibonacciSample"]
+	path = apps/FibonacciSample
+	url = https://github.com/oshokry/FibonacciSample.git
+[submodule "kube/kubectl/plugins/luksa_kubectl-plugins"]
+	path = kube/kubectl/plugins/luksa_kubectl-plugins
+	url = https://github.com/luksa/kubectl-plugins
+[submodule "kube/FibonacciSample"]
+	path = kube/FibonacciSample
+	url = https://github.com/mwoodpatrick/FibonacciSample.git
+[submodule "kube/k3d/wordpress/wordpress-helm"]
+	path = kube/k3d/wordpress/wordpress-helm
+	url = https://github.com/mwoodpatrick/wordpress-helm
+[submodule "kube/k3d/wordpress/WordPress-Helm-Chart"]
+	path = kube/k3d/wordpress/WordPress-Helm-Chart
+	url = https://github.com/mwoodpatrick/WordPress-Helm-Chart.git
+[submodule "packages/vscode-dev-containers"]
+	path = packages/vscode-dev-containers
+	url = https://github.com/mwoodpatrick/vscode-dev-containers.git
+[submodule "apps/workshop-astra-block"]
+	path = apps/workshop-astra-block
+	url = https://github.com/datastaxdevs/workshop-astra-block.git

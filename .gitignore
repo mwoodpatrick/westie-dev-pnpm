@@ -4,3 +4,5 @@ build
 *.log
 save
 .slack
+pnpm-lock.yaml
+migrations.json

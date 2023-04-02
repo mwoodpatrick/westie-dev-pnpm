@@ -1,0 +1,19 @@
+# cluster-config.yml
+# https://kind.sigs.k8s.io/docs/user/using-wsl2/
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: westie-cluster
+nodes:
+  - role: control-plane
+    kubeadmConfigPatches:
+      - |
+        kind: InitConfiguration
+        nodeRegistration:
+          kubeletExtraArgs:
+            node-labels: "ingress-ready=true"
+    extraPortMappings:
+      - containerPort: 80
+        hostPort: 80
+        protocol: TCP
+  - role: worker
+  - role: worker

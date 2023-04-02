@@ -1,0 +1,1000 @@
+   74  systemctl status docker.service
+   75  exit
+   76  podman ps
+   77  git status
+   78  cd projects/git/home/
+   79  git status
+   80  podman ps
+   81  podman volume ls
+   82  git status
+   83  git diff .config/bash/init.bash
+   84  git add .
+   85  git status
+   86  cd ../westie-dev-pnpm/
+   87  git diff kube/kube-toolbox/alpine/Dockerfile
+   88  git commit -m "added alias kbox"
+   89  git push
+   90  git status
+   91  docker run -d -p 80:80 docker/getting-started
+   92  ls -l ..
+   93  rm ../fred 
+   94  git status
+   95  pwd
+   96  cd kube/
+   97  ls
+   98  podman ps
+   99  exit
+  100  docker ps
+  101  lsof | grep 6445
+  102  podman ps
+  103  dir /mnt/c/Users/mlwp/westie-base/
+  104  dir /mnt/c/Users/mlwp/Software/WSL/
+  105  ls -l /mnt/c/Users/mlwp/Software/WSL/
+  106  cd /mnt/c/Users/mlwp/Software/WSL
+  107  ls
+  108  exit
+  109  systemctl status
+  110  systemctl --failed
+  111  update_software 
+  112  docker ps
+  113  update_software 
+  114  kind
+  115  k3s
+  116  k0s
+  117  snap info k9s
+  118  apt info kas
+  119  docker -h
+  120  podman -h
+  121  	docker version
+  122  	docker info
+  123  	docker run -d -p 8081:80 docker/getting-started
+  124  docker ps
+  125  docker stop docker/getting-started
+  126  docker stop getting-started
+  127  docker stop friendly_moore
+  128  docker container rm friendly_moore
+  129  docker container ls
+  130  docker ps
+  131  usermod -G adm -a mwoodpatrick
+  132  sudo usermod -G adm -a mwoodpatrick
+  133  sudo 	usermod -G systemd-journal -a mwoodpatrick
+  134  ls projects/git/
+  135  pwd
+  136  cd projects/git/
+  137  ls
+  138  git clone https://github.com/mwoodpatrick/devilbox.git
+  139  exit 
+  140  systemctl status
+  141  ls projects/git/
+  142  cd projects/git/home/
+  143  find . -name init.bash
+  144  gvim .config/bash/init.bash
+  145  apt::install_neovim
+  146  gvim .config/bash/init.bash
+  147  cd ../westie-dev-pnpm/
+  148  curl -fsSL https://get.pnpm.io/install.sh | sh -
+  149  pnpm update
+  150  source ~/.bashrc 
+  151  which pnpm
+  152  pnpm update
+  153  cd projects/git/westie-dev-pnpm/
+  154  pnpm update
+  155  npx nx migrate latest
+  156  git diff package.json
+  157  pnpm install --no-frozen-lockfile
+  158  ht
+  159  npx nx help
+  160  npx nx list
+  161  gvim .config/bash/init.bash 
+  162  exit
+  163  less projects/git/.config/bash/init.bash 
+  164  less projects/git/home/.config/bash/init.bash 
+  165  cd projects/git/home/
+  166  git pull
+  167  git status
+  168  git diff .config/bash/init.bash
+  169  git diff --staged .config/bash/init.bash
+  170  git stash
+  171  git pull
+  172  git status
+  173  git help stash
+  174  git stash list
+  175  git stash apply 
+  176  git status
+  177  gvim .config/bash/init.bash 
+  178  git status
+  179  git diff
+  180  git status
+  181  git add .config/bash/init.bash
+  182  git status
+  183  exit
+  184  sudo apt install vim-gtk3
+  185  gvim
+  186  sudo apt install inxi
+  187  cat /etc/os-release 
+  188  ht
+  189  gvim projects/git/home/scripts/apt/apt.bash 
+  190  apt search pnpm
+  191  pnpm add -g pnpm
+  192  pnpm update
+  193  pwd
+  194  cd projects/git/westie-dev-pnpm/
+  195  pnpm update
+  196  pwd
+  197  git status
+  198  git diff package.json
+  199  git status
+  200  nvim .gitignore 
+  201  git status
+  202  nvim .gitignore 
+  203  git log pnpm-lock.yaml
+  204  git rm pnpm-lock.yaml
+  205  git rm --cached pnpm-lock.yaml 
+  206  git status
+  207  git add .
+  208  git status
+  209  git commit -m "update Nx"
+  210  git push
+  211  git pull
+  212  git config pull.rebase false
+  213  git pull
+  214  gvim package.json 
+  215  cp package.json package.json.sv
+  216  gvim package.json 
+  217  npx nx migrate latest
+  218  gvim package.json 
+  219  git diff package.json
+  220  git status
+  221  git add package.json
+  222  git rm  pnpm-lock.yaml
+  223  git status
+  224  git push
+  225  git status
+  226  rm package.json.sv 
+  227  git status
+  228  cd ../home/
+  229  git status
+  230  git add .config/nvim/ginit.vim
+  231  git diff .config/bash/init.bash
+  232  gvim .config/bash/init.bash
+  233  gvim
+  234  command -v pnpm
+  235  if ! command -v pnpm &> /dev/null; then     echo "<the_command> could not be found";     exit; fi
+  236  if command -v pnpm &> /dev/null; then     echo "pnpm found";     exit; fi
+  237  ht
+  238  code-insiders tunnel
+  239  code-insiders tunnel .
+  240  ls -lrt
+  241  cd projects/git/westie-dev-pnpm/
+  242  git status
+  243  cd ../home/
+  244  git status
+  245  ls .vscode/
+  246  ls -l .vscode/settings.json 
+  247  pwd
+  248  ls -l /home/mwoodpatrick/projects/git/home/.vscode/settings.json 
+  249  find /home/mwoodpatrick/projects/git/home/ -name .vscode
+  250  find /home/mwoodpatrick/ -name .vscode
+  251  cd
+  252  pwd
+  253  code-insiders tunnel .
+  254  pwd
+  255  ls -lrt
+  256  gvim mwoodpatrick.code-workspace 
+  257  which nvim
+  258  ls
+  259  mv vscode_defaullt_settings.json vscode_default_settings.json
+  260  cd
+  261  pwd
+  262  ls .vscode
+  263  nvi, .vscode/settings.json 
+  264  nvim .vscode/settings.json 
+  265  which nvim
+  266  fg
+  267  code-insiders .
+  268  ps -Alf | grep vim
+  269  code-insiders .
+  270  ls
+  271  nvim vscode_default_settings.json
+  272  pwd
+  273  nvim .vscode/settings.json vscode_default_settings.json
+  274  code-insiders .
+  275  which neovom
+  276  neovim --version
+  277  nvim --version
+  278  sudo apt search neovim
+  279  snap info neovim
+  280  snap info nvim
+  281  sudo apt remove neovim
+  282  which nvim
+  283  snap info nvim
+  284  sudo snap install --edge nvim
+  285  sudo snap install --edge nvim  --classic
+  286  nvim --version
+  287  snap info nvim
+  288  ls -Ral /snap/nvim/current/
+  289  ls -Ral /snap/nvim/current/|less
+  290  ls /snap/nvim/current/usr/bin/nvim --version
+  291  /snap/nvim/2791/usr/bin/nvim --version
+  292  sudo ln -s /snap/nvim/2791/usr/bin/nvim /usr/local/bin/neovim
+  293  which neovim
+  294  neovim --version
+  295  neovim 
+  296  ht
+  297  nvim .vscode/settings.json 
+  298  sudo rm  /usr/local/bin/neovim
+  299  sudo ln -s /snap/nvim/2791/usr/bin/nvim /usr/local/bin
+  300  which nvim
+  301  nvim --version
+  302  fg
+  303  ht
+  304  ls /usr/local/bin/nvim 
+  305  fg
+  306  code-insiders .
+  307  ps -Alf | grep code
+  308  code-insiders --help
+  309  code-insiders --help|less
+  310  code-insiders tunnel
+  311  mkdir /home/mwoodpatrick/test_tunnel
+  312  firefox
+  313  sudo snap install firefox
+  314  firefox
+  315  bg
+  316  which firefox
+  317  echo $PATH
+  318  echo $PATH > junk
+  319  nvim junk
+  320  ls -l /snap/bin
+  321  ls /usr/bin/snap
+  322  ht
+  323  sudo ln -s /snap/nvim/2791/usr/bin/nvim /usr/local/bin
+  324  code-insiders .
+  325  ls /snap/bin/nvim 
+  326  ls -l /snap/bin/nvim 
+  327  snap -h
+  328  which snap
+  329  snap aliases
+  330  which firefox
+  331  ls -l /snap/bin/firefox
+  332  which snap
+  333  cd projects/git/home/
+  334  git status
+  335  code-insiders .
+  336  ls .vscode/
+  337  nvim .vscode/settings.json 
+  338  code-insiders .
+  339  which code
+  340  snap info code
+  341  snap info code-insiders
+  342  sudo snap install --classic code
+  343  code .
+  344  which code
+  345  code --version
+  346  systemctl stop code-server@mwoodpatrick.service
+  347  sudo systemctl stop code-server@mwoodpatrick.service
+  348  code .
+  349  sudo systemctl disable code-server@mwoodpatrick.service
+  350  sudo systemctl remove code-server@mwoodpatrick.service
+  351  sudo systemctl help
+  352  sudo systemctl --help
+  353  sudo systemctl clean code-server@mwoodpatrick.service
+  354  apt info code
+  355  which code
+  356  code .
+  357  snap info code
+  358  apt list | grep code
+  359  apt list | grep coder
+  360  apt list --installed | grep coder
+  361  apt list --installed | grep code
+  362  apt info code-server
+  363  sudo apt remove code-server
+  364  apt autoremove
+  365  sudo apt autoremove
+  366  code
+  367  type code
+  368  git status
+  369  pwd
+  370  cd projects/git/home/
+  371  git status
+  372  code-insiders .
+  373  code
+  374  sudo snap remove code
+  375  code
+  376  which code-insiders
+  377  code
+  378  which code-insiders
+  379  alias
+  380  code .
+  381  exit
+  382  echo $PATH
+  383  find projects/git/ -name os.bash
+  384  finf projects/git/ -name "*.bash" -exec grep -nH Insiders {} \;
+  385  find projects/git/ -name "*.bash" -exec grep -nH Insiders {} \;
+  386  find projects/git/ -type f -exec grep -nH Insiders {} \;
+  387  find . -type f -exec grep -nH Insiders {} \;
+  388  find . -type f -exec grep -nH Insiders {} \;|less
+  389  code .
+  390  which code
+  391  which codee-insiders
+  392  which code-insiders
+  393  ls /mnt/c/Users/mlwp/AppData/Local/Programs/Microsoft VS Code Insiders/bin
+  394  ls "/mnt/c/Users/mlwp/AppData/Local/Programs/"
+  395  ls "/mnt/c/Users/mlwp/AppData/Local/Programs/Microsoft VS Code"
+  396  ls "/mnt/c/Users/mlwp/AppData/Local/Programs/Microsoft VS Code/bin"
+  397  ls "/mnt/c/Users/mlwp/AppData/Local/Programs/Microsoft VS Code/bin/code"
+  398  "/mnt/c/Users/mlwp/AppData/Local/Programs/Microsoft VS Code/bin/code"
+  399  echo $PATH
+  400  sudo apt install code
+  401  nvim ~/.bashrc 
+  402  h | grep firefox
+  403  type snap::install_firefox
+  404  git statys
+  405  git status
+  406  cd projects/git/home/
+  407  git status
+  408  cat .git/config 
+  409  git status
+  410  cd ../westie-dev-pnpm/
+  411  cp -pr ../home/.vscode/ .
+  412  git status
+  413  code --help
+  414  code --list-extensions
+  415  code --list-extensions|sort
+  416  ls .vscode/
+  417  code --list-extensions|sort>xx
+  418  diff xx .vscode/extensions.json 
+  419  nvim .vscode/extensions.json
+  420  lc xx 
+  421  tr A-Z a-z <xx
+  422  tr A-Z a-z <xx >yy
+  423  fg
+  424  uniq zz|sort > sss
+  425  ls
+  426  uniq zzz|sort > sss
+  427  nvim sss
+  428  fg
+  429  j
+  430  fg
+  431  nvim .vscode/extensions.json 
+  432  ht
+  433  nvim sss
+  434  sort sss|less
+  435  nvim sss
+  436  sort sss|less
+  437  sort sss|uniq > zzz 
+  438  j
+  439  nvim .vscode/extensions.json 
+  440  git diff .vscode/extensions.json
+  441  em sss xx zzz yy 
+  442  rm sss xx zzz yy 
+  443  git diff .vscode/extensions.json
+  444  k3s help
+  445  k3s kubectl get clusters
+  446  k3s server --write-kubeconfig-mode
+  447  k3s server help
+  448  k3s help server 
+  449  k3s help server |less
+  450  sudo k3s server 
+  451  lsof | grep 6443
+  452  lsof | grep 6443|less
+  453  sudo lsof | grep 6443|less
+  454  sudo lsof 2>&1 | grep 6443 
+  455  sytemctl list
+  456  systemctl list
+  457  systemctl --help
+  458  systemctl list-units
+  459  systemctl list-units|grep k3s
+  460  docker ps
+  461  k3s crictl ps
+  462  sudo k3s crictl ps
+  463  k3s help
+  464  k3s crictl
+  465  sudo k3s crictl
+  466  sudo k3s crictlht
+  467  ht
+  468  sudo k3s crictlht ps
+  469  sudo k3s crictl ps
+  470  sudo k3s crictl help
+  471  sudo k3s crictl ps -a
+  472  ls -l kube/k3s/init.bash 
+  473  sudo k3s crictl ps 
+  474  crictl -h
+  475  crictl info
+  476  sudo crictl info
+  477  which crictl
+  478  ls -l /usr/local/bin/crictl
+  479  ls -l /usr/local/bin/kubectl
+  480  which kubectl
+  481  k3s help
+  482  which ctr
+  483  ls -l /usr/bin/ctr
+  484  ctr -h
+  485  containerd -h
+  486  containerd config
+  487  containerd config dump
+  488  kubectl get nodes
+  489  k3s-killall.sh
+  490  sudo k3s crictl ps 
+  491  update_software 
+  492  ht
+  493  k3s serve
+  494  k3s server
+  495  h | grep server
+  496  sudo k3s server --write-kubeconfig-mode 644
+  497  bg
+  498  sudo k3s crictl ps 
+  499  kubctl get nodes
+  500  kubectl get nodes
+  501  sudo k3s crictl ps 
+  502  fg
+  503  sudo k3s crictl ps 
+  504  systemctl status k3s.service
+  505  sudo systemctl start k3s.service
+  506  systemctl status k3s.service
+  507  ht
+  508  sudo k3s crictl ps
+  509  systemctl stop k3s.service
+  510  sudo systemctl stop k3s.service
+  511  systemctl stop k3s.service
+  512  ls /etc/rancher/k3s/k3s.yaml
+  513  cat /etc/rancher/k3s/k3s.yaml
+  514  sudo cat /etc/rancher/k3s/k3s.yaml
+  515  export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+  516  kubectl get pods --all-namespaces
+  517  sudo kubectl get pods --all-namespaces
+  518  sudo k3s kubectl get pods --all-namespaces
+  519  ls -l /etc/rancher/k3s/k3s.yaml
+  520  systemctl help
+  521  systemctl --help
+  522  sudo systemctl status k3s.service|less
+  523  systemctl start k3s.service
+  524  sudo systemctl start k3s.service
+  525  sudo systemctl status k3s.service|less
+  526  ht
+  527  sudo kubectl get pods --all-namespaces
+  528  sudo k3s kubectl get pods --all-namespaces
+  529  helm ls --all-namespaces
+  530  sudo helm ls --all-namespaces
+  531  sudo k3s helm ls --all-namespaces
+  532  sudo apt install kubectl
+  533  sudo snap install kubectl
+  534  sudo snap install kubectl --classic
+  535  ht
+  536  sudo kubectl get pods --all-namespaces
+  537  hgt
+  538  ht
+  539  sudo k3s kubectl get pods --all-namespaces
+  540  sudo kubectl get pods --all-namespaces
+  541  nvim $KUBECONFIG 
+  542  sudo nvim $KUBECONFIG 
+  543  echo $KUBECONFIG 
+  544  kubectl -h
+  545  kubectl get --help
+  546  kubectl get --help|less
+  547  sudo kubectl --kubeconfig /etc/rancher/k3s/k3s.yaml get pods --all-namespaces
+  548  sudo helm --kubeconfig /etc/rancher/k3s/k3s.yaml ls --all-namespaces
+  549  ht
+  550  sudo kubectl --kubeconfig /etc/rancher/k3s/k3s.yaml get pods --all-namespaces
+  551  sudo snap install helm
+  552  sudo snap install helm --classic
+  553  sudo snap install kubectl --classic
+  554  sudo snap refresh kubectl --classic
+  555  sudo helm --kubeconfig /etc/rancher/k3s/k3s.yaml ls --all-namespaces
+  556  helm --version
+  557  helm version
+  558  helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+  559  kubectl get pods --namespace cert-manager
+  560  sudo kubectl get pods --namespace cert-manager
+  561  ht
+  562  sudo chmod uga+r /etc/rancher/k3s/k3s.yaml
+  563  kubectl get pods --namespace cert-manager
+  564  helm --kubeconfig /etc/rancher/k3s/k3s.yaml ls --all-namespaces
+  565  helm  ls --all-namespaces
+  566  mkdir -p $HOME/.kube
+  567  ls -al $HOME/.kube
+  568  ht
+  569  sudo cp -i /etc/rancher/k3s/k3s.yaml $HOME/.kube/config
+  570  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  571  export KUBECONFIG=$HOME/.kube/config
+  572  helm  ls --all-namespaces
+  573  ls -l $HOME/.kube/config
+  574  chmod ga-r $HOME/.kube/config
+  575  ls -l $HOME/.kube/config
+  576  chmod u+r $HOME/.kube/config
+  577  ls -l $HOME/.kube/config
+  578  helm  ls --all-namespaces
+  579  ht
+  580  kubectl get pods --all-namespaces
+  581  ls -l $HOME/.kube/config
+  582  ls -l $KUBECONFIG
+  583  helm  ls --all-namespaces
+  584  kubectl get pods --all-namespaces
+  585  kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.9/deploy/manifests/00-crds.yaml
+  586  ls /var/lib/rancher/k3s/server/manifests
+  587  sudo ls /var/lib/rancher/k3s/server/manifests
+  588  ht
+  589  kubectx
+  590  sudo snap install kubectx
+  591  sudo snap install kubectx  --classic
+  592  kubectx --help
+  593  kubectx
+  594  kubectx --version
+  595  k3sup
+  596  snap info k3sup
+  597  pushd /tmp
+  598  curl -sLS https://get.k3sup.dev | sh
+  599  sudo install k3sup /usr/local/bin/
+  600  k3sup --help
+  601  t
+  602  ht
+  603  kubectl create namespace cattle-system
+  604  kubectl create namespace cert-manager
+  605  kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.0.4/cert-manager.crds.yaml
+  606  helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+  607  helm repo add jetstack https://charts.jetstack.io
+  608  helm repo update
+  609  helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.0.4
+  610  helm install rancher rancher-latest/rancher --namespace cattle-system --set hostname=k3s-rancher.homelab.int
+  611  helm install rancher rancher-stable/rancher --namespace cattle-system --set hostname=archlinux --set replicas=1 --set tls=ingress  --set ingress.tls.source=secret --set privateCA=true
+  612  helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
+  613  helm repo update
+  614  helm install rancher rancher-stable/rancher --namespace cattle-system --set hostname=archlinux --set replicas=1 --set tls=ingress  --set ingress.tls.source=secret --set privateCA=true
+  615  helm repo add bitnami https://charts.bitnami.com/bitnami
+  616  cd $PROJECTS_ROOT/git/
+  617  cd westie-dev-pnpm/
+  618  git status
+  619  git add .vscode/
+  620  git diff kube/k3s/init.bash
+  621  git status
+  622  git add kube/k3s/init.bash
+  623  git commit -m "updated k3s script"
+  624  git push
+  625  sudo snap install kontena-lens --classic
+  626  k3d -h
+  627  which kubectl
+  628  kubectl -v
+  629  kubectl version
+  630  snap search kubectl
+  631  snap info kubectl
+  632  snap help
+  633  snap help install
+  634  snap install --channel=1.20.15
+  635  snap install --channel=1.20.15 kubectl
+  636  sudo snap install --channel=1.20.15 kubectl
+  637  snap help  refresh
+  638  sudo snap  refresh --channel=1.20.15 kubectl
+  639  sudo snap refresh --channel=1.20 kubectl
+  640  kubectl version
+  641  which snap
+  642  which kubectl
+  643  echo $PATH
+  644  export PATH=/snap/bin:$PATH
+  645  which kubectl
+  646  kubectl version
+  647  kubectl version --client
+  648  snap info k3d
+  649  k3d -h
+  650  curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+  651  k3d --help
+  652  k3d --version
+  653  snap info helm
+  654  which helm
+  655  which watch
+  656  cd $GIT_ROOT/westie-dev-pnpm/kube/k3d
+  657  ls
+  658  mkdir wordpress
+  659  cd wordpress/
+  660  git clone https://codeberg.org/vhs/wordpress-helm.git
+  661  ls
+  662  ls wordpress-helm/
+  663  git clone https://codeberg.org/vhs/WordPress.git
+  664  ls
+  665  ht
+  666  k3d cluster create k3s-wordpress -i rancher/k3s:latest     --api-port 6550 --agents 2
+  667  pwd
+  668  ht
+  669  ls
+  670  cd ../wordpress-helm && cp install.sh.example install.sh && chmod +x install.sh && cp values-local.yaml.example values-local.yaml
+  671  cd wordpress-helm/
+  672  ls
+  673  cp install.sh.example install.sh && chmod +x install.sh
+  674  cp values-local.yaml.example values-local.yaml
+  675  code .
+  676  ls wp-docker/
+  677  ls wp-cli-docker/
+  678  docker ps
+  679  export KUBECONFIG=$(k3d kubeconfig write k3s-wordpress)
+  680  echo $KUBECONFIG 
+  681  kubectl create namespace sandbox
+  682  ./install.sh -n sandbox
+  683  helm dependency build
+  684  snap info redis
+  685  cat .git/config 
+  686  helm search repo bitnami
+  687  helm search repo bitnami |grep redis
+  688  helm search repo bitnami |grep mariadb
+  689  helm search repo bitnami |less
+  690  ht
+  691  helm dependency build
+  692  ./install.sh -n sandbox
+  693  firefox
+  694  bg
+  695  lsof
+  696  lsof|grep 8080
+  697  sudo lsof|grep 8080
+  698  docker ps
+  699  sudo lsof > junk
+  700  sudo lsof 2>&1 > junk
+  701  lsof 2>&1 > junk
+  702  docker ps
+  703  docker logs  k3d-k3s-wordpress-serverlb
+  704  docker ps
+  705  docker logs k3d-k3s-wordpress-server-0
+  706  k3d help
+  707  k3d help cluster
+  708  k3d cluster list
+  709  k3d cluster stop k3s-wordpress
+  710  k3d cluster list
+  711  k3d help cluster list
+  712  k3d help cluster 
+  713  k3d help cluster list --verbose
+  714  k3d cluster list --verbose
+  715  k3d help
+  716  k3d completion bash
+  717  k3d help completion
+  718  sudo k3d completion bash > /etc/bash_completion.d/k3d
+  719  ls /etc/bash_completion.d
+  720  mkdir ~/.bash_completion.d
+  721  k3d completion bash > ~/bash_completion.d/k3d
+  722  k3d completion bash > ~/bash_completion.d/
+  723  k3d completion bash > ~/bash_completion.d/k3d
+  724  touch ~/bash_completion.d/k3d
+  725  echo fred > ~/bash_completion.d/k3d
+  726  ls -ld  /home/mwoodpatrick/bash_completion.d
+  727  k3d completion bash > ~/.bash_completion.d/k3d
+  728  source ~/.bash_completion.d/k3d
+  729  ht
+  730  k3d cluster list --output=yaml
+  731  k3d cluster list --output=yaml|less
+  732  docker ps
+  733  docker ps -a
+  734  ht
+  735  nvim ~/.bashrc 
+  736  mkdir -p /tmp/k3dvol
+  737  k3d create --name "k3d-cluster" --volume /tmp/k3dvol:/tmp/k3dvol --publish "80:80" --workers 2
+  738  k3d cluster create --name "k3d-cluster" --volume /tmp/k3dvol:/tmp/k3dvol --publish "80:80" --workers 2
+  739  k3d help cluster 
+  740  k3d help cluster create 
+  741  cd ../pv-example
+  742  mkdir ../pv-example
+  743  cd ../pv-example
+  744  k3d help cluster create > k3d_cluster_create.txt
+  745  code k3d_cluster_create.txt 
+  746  k3d cluster create --name "k3d-cluster" --volume /tmp/k3dvol:/tmp/k3dvol --port "80:80" --workers 2
+  747  k3d cluster create k3d-cluster --volume /tmp/k3dvol:/tmp/k3dvol --port "80:80" --workers 2
+  748  k3d cluster create k3d-cluster --volume /tmp/k3dvol:/tmp/k3dvol --port "80:80" --agents 2
+  749  kubectl cluster-info
+  750  kubectl get nodes
+  751  kubectl get pods
+  752  kubectl help
+  753  kubectl help|grep comple
+  754  kubectl help|less
+  755  kubectl help completion
+  756  kubectl completion bash ~/.bash_completion.d/kubectl
+  757  kubectl completion bash > ~/.bash_completion.d/kubectl
+  758  nvim ~/.bashrc 
+  759  source ~/.bash_completion.d/kubectl
+  760  kubectl help 
+  761  kubectl get volumeattachments.storage.k8s.io 
+  762  kubectl get pods
+  763  kubectl get pods --all-namespaces 
+  764  kubectl get nodes --all-namespaces 
+  765  kubectl get nodes.metrics.k8s.io
+  766  kubectl get nodes.metrics.k8s.io -h
+  767  kubectl apply -f app.yml
+  768  ls
+  769  kubectl apply -f app.yaml 
+  770  kubectl get pv
+  771  kubectl get pvc
+  772  kubectl get pods
+  773  kubectl exec -it echo-58fd7d9b6-x4rxj sh
+  774  kubectl exec -it echo-7b7478b648-m77cw sh
+  775  ls /tmp/k3dvol/
+  776  cat /tmp/k3dvol/hostname.txt 
+  777  cat /tmp/k3dvol/uname.txt 
+  778  docker ps
+  779  docker image info rancher/k3s:v1.25.6-k3s1
+  780  docker image inspect rancher/k3s:v1.25.6-k3s1
+  781  docker image inspect rancher/k3s:v1.25.6-k3s1|less
+  782  kubectl get nodes -o wide
+  783  kubectl delete pod/echo-7b7478b648-m77cw
+  784  kubectl get pods
+  785  kubectl get pods -o wide
+  786  kubectl exec -it echo-7b7478b648-5tmxt sh
+  787  snap info libnss-myhostname
+  788  apt search libnss-myhostname
+  789  nvim /etc/nsswitch.conf 
+  790  update_software 
+  791  sudo apt install libnss-myhostname
+  792  sudo nvim /etc/nsswitch.conf 
+  793  getent ahosts `hostname`
+  794  getent ahosts localhost
+  795  getent ahosts wp.localhost
+  796  ht
+  797  kubectl config current-context
+  798  kubectl version --short
+  799  kubectl get namespaces
+  800  k3d cluster delete
+  801  kubectl get namespaces
+  802  k3d cluster list
+  803  k3d cluster stop k3d-cluster
+  804  pwd
+  805  cd $GIT_ROOT/westie-dev-pnpm/
+  806  pwd
+  807  k3d cluster create westie --api-port 127.0.0.1:6445 --servers 3 --agents 2 --volume '/home/mwoodpatrick/projects/git/westie-dev-pnpm:/westie@agent[*]' --port '8080:80@loadbalancer'
+  808  k3d cluster create westie --api-port 127.0.0.1:6445 --servers 3 --agents 2 --volume '/home/mwoodpatrick/projects/git/westie-dev-pnpm:/code@agent[*]' --port '8080:80@loadbalancer'
+  809  ls /home/mwoodpatrick/projects/git/westie-dev-pnpm
+  810  k3d cluster create westie --api-port 127.0.0.1:6445 --servers 3 --agents 2 --volume '/home/mwoodpatrick/projects/git/westie-dev-pnpm:/westie-dev-pnpm@agent[*]' --port '8080:80@loadbalancer'
+  811  git status
+  812  cd kube/k3d/wordpress/
+  813  ls
+  814  mv pv-example/ ..
+  815  ls
+  816  cd WordPress/
+  817  git status
+  818  cd ../wordpress-helm/
+  819  git status
+  820  nvim .git/config 
+  821  git status
+  822  git help fork
+  823  cd ..
+  824  mv wordpress-helm/
+  825  mv wordpress-helm/ wordpress-helm.sv
+  826  mkdir wordpress-helm
+  827  cd wordpress-helm
+  828  git init
+  829  git status
+  830  git help remote
+  831  cat ../wordpress-helm.sv/.git/config 
+  832  git remote add upstream https://codeberg.org/vhs/wordpress-helm.git
+  833  git status
+  834  git pull upstream
+  835  ls
+  836  git pull upstream trunk
+  837  git checkout trunk
+  838  ls
+  839  git help
+  840  git help branch
+  841  git branch list
+  842  git help branch
+  843  git branch -a
+  844  git branch -d list
+  845  git branch -d mater
+  846  git branch -d master
+  847  ls
+  848  git branch -a
+  849  ht
+  850  git remote add origin https://github.com/mwoodpatrick/wordpress-helm.git
+  851  git push origin
+  852  code .
+  853  git help push
+  854  git push origin
+  855  pushd ../wordpress-helm.sv/
+  856  git status
+  857  popd
+  858  cp ../wordpress-helm.sv/requirements.yaml requirements.yaml 
+  859  git diff
+  860  git add
+  861  git status
+  862  git add .
+  863  git status
+  864  git commit -m "update versions for mariadb and redis"
+  865  git push
+  866  git push origin
+  867  cat .git/config 
+  868  git config remote origin
+  869  git push --set-upstream origin
+  870  cat .git/config 
+  871  git status
+  872  cd ..
+  873  mv wordpress-helm wordpress-helm.mark
+  874  git submodule add https://github.com/mwoodpatrick/wordpress-helm wordpress-helm
+  875  git status
+  876  git diff ../../../.gitmodules
+  877  git diff --staged ../../../.gitmodules
+  878  git commit -m "add wordpress-helm"
+  879  git push
+  880  git status
+  881  cd WordPress/
+  882  cat .git/config 
+  883  ht
+  884  hl
+  885  ls
+  886  cat .git/config 
+  887  cd ..
+  888  mv WordPress/ WordPress.sv
+  889  mkdir WordPress-Helm-Chart
+  890  cd WordPress-Helm-Chart/
+  891  git init
+  892  git remote add upstream https://codeberg.org/vhs/WordPress.git
+  893  cat .git/config 
+  894  git pull upstream default
+  895  ls
+  896  git add remote origin https://github.com/mwoodpatrick/WordPress-Helm-Chart.git
+  897  ht
+  898  git remote add origin https://github.com/mwoodpatrick/WordPress-Helm-Chart.git
+  899  git push --set-upstream origin
+  900  git push --set-upstream origin master
+  901  cd ..
+  902  mv WordPress-Helm-Chart/ WordPress-Helm-Chart.mark
+  903  ht
+  904  hl
+  905  ls
+  906  git submodule add  https://github.com/mwoodpatrick/WordPress-Helm-Chart.git WordPress-Helm-Chart
+  907  git status
+  908  git commit -m "Add submodule  WordPress-Helm-Chart
+  909  git commit -m "Add submodule  WordPress-Helm-Chart"
+  910  git push
+  911  git status
+  912  cd ..
+  913  ls pv-example/
+  914  mkdir westie
+  915  cd westie
+  916  k3d cluster create westie --api-port 127.0.0.1:6445 --servers 3 --agents 2 --volume '/home/mwoodpatrick/projects/git/westie-dev-pnpm:/westie@agent:*' --port '8080:80@loadbalancer'
+  917  docker ps
+  918  git status
+  919  mkdir save
+  920  mv save/ ../wordpress/
+  921  cd ../wordpress/
+  922  mv *.sv *.mark save/
+  923  ls
+  924  pushd ../../
+  925  ls
+  926  pwd
+  927  cd ..
+  928  nvim .gitignore 
+  929  git status
+  930  popd
+  931  cd ..
+  932  ls pv-example/
+  933  docker ps
+  934  kubectl config current-context
+  935  kubectl get namespaces
+  936  kubectl cluster-info
+  937  kubectl get nodes
+  938  kubectl get nodes -o wide
+  939  cp pv-example/app.yaml westie
+  940  cd westie
+  941  kubectl apply -f app.yaml
+  942  	persistentvolume/task-pv-volume created
+  943  	persistentvolumeclaim/task-pv-claim created
+  944  	deployment.apps/echo created
+  945  kubectl get pv
+  946  kubectl get pods
+  947  kubectl echo-7b7478b648-fmjsj sh
+  948  kubectl exec -it echo-7b7478b648-fmjsj sh
+  949  kubectl exec -it echo-7b7478b648-fmjsj -- sh
+  950  docker ps
+  951  docker exec -it k3d-westie-agent-0 sh
+  952  docker ps
+  953  docker ps -o wide
+  954  docker ps --help
+  955  docker ps --no-trunc
+  956  docker ps --no-trunc > junk
+  957  nvim junk
+  958  code junk
+  959  docker ps --no-trunc -s > junk
+  960  hostname
+  961  docker exec -it k3d-westie-agent-0 sh
+  962  kubectl get volumes
+  963  kubectl get pv
+  964  kubectl get pvc
+  965  kubectl get pods
+  966  kubectl get pods.metrics.k8s.io
+  967  pushd ~/projects/git/westie-dev-pnpm
+  968  ls
+  969  cd apps/
+  970  ls
+  971  mkdir new-api
+  972  cd new-api/
+  973  npm init -y
+  974  npi i express
+  975  npm i express
+  976  code .
+  977  npm start
+  978  bg
+  979  curl http://localhost:8087/api/v1/test
+  980  ht
+  981  curl http://localhost:8087/api/v1/test
+  982  mv src/Dockerfile .
+  983  echo $USER
+  984  docker build -t ${USER}/new-api:1.0.0 .
+  985  docker images
+  986  docker run -it --rm -p 8087:8087 rodrigoluisfaria/new-api:1.0.0
+  987  k3d cluster list
+  988  k3d cluster stop westie
+  989  k3d help 
+  990  k3 help config
+  991  k3d help config
+  992  k3d help cluster
+  993  docker run -it --rm -p 8087:8087 rodrigoluisfaria/new-api:1.0.0
+  994  docker ps
+  995  docker run -it --rm -p 8088:8087 rodrigoluisfaria/new-api:1.0.0
+  996  docker run -it --rm -p 8087:8087 rodrigoluisfaria/new-api:1.0.0
+  997  docker run -it --rm -p 8088:8087 rodrigoluisfaria/new-api:1.0.0
+  998  dockr help run
+  999  docker help run
+ 1000  docker login
+ 1001  sudo apt-get -y install libsecret-1-0
+ 1002  docker login
+ 1003  run sudo apt install -y gnupg2 pass
+ 1004  sudo apt install -y gnupg2 pass
+ 1005  ht
+ 1006  docker login
+ 1007  sudo pass init
+ 1008  docker logout
+ 1009  docker login
+ 1010  sudo pass init
+ 1011  gpg --generate-key
+ 1012  docker logout
+ 1013  pass init B476CFF07015A2270CD3CEC585194736250A7924
+ 1014  docker logout
+ 1015  docker login
+ 1016  docker image ps
+ 1017  docker image ls
+ 1018  docker push mwoodpatrick/new-api:1.0.0
+ 1019  sudo docker push mwoodpatrick/new-api:1.0.0
+ 1020  docker image ls
+ 1021  docker logout
+ 1022  docker login -u mwoodpatrick -p Dkr4Mrk7329%^
+ 1023  docker logout
+ 1024  docker login -u mwoodpatrick  --password-stdin
+ 1025  docker logout
+ 1026  docker login -u mwoodpatrick  --password-stdin
+ 1027  docker help login
+ 1028  docker login --username mwoodpatrick --password-stdin
+ 1029  sudo docker push mwoodpatrick/new-api:1.0.0
+ 1030  docker image ls
+ 1031  exit
+ 1032  update_software 
+ 1033  docker version
+ 1034  snap info docker
+ 1035  snap install docker
+ 1036  sudo snap install docker
+ 1037  which docker
+ 1038  echo $PATH
+ 1039  /snap/bin/docker version
+ 1040  snap info docker
+ 1041  snap help install 
+ 1042  nvim ~/.bashrc 
+ 1043  cd $GIT_ROOT/home/
+ 1044  nvim .config/bash/init.bash 
+ 1045  which PATH
+ 1046  nvim .config/bash/init.bash 
+ 1047  which docker
+ 1048  ls /snap/bin/
+ 1049  echo $PATH
+ 1050  nvim 
+ 1051  cd $GIT_ROOT/home/.config/
+ 1052  nvim bash/init.bash 
+ 1053  which docker
+ 1054  docker --version
+ 1055  cd $GIT_ROOT/
+ 1056  cd westie-dev-pnpm/apps/
+ 1057  ls
+ 1058  cd new-api/
+ 1059  ls
+ 1060  h | grep docker
+ 1061  docker images
+ 1062  docker build -t ${USER}/new-api:1.0.0 .
+ 1063  docker push mwoodpatrick/new-api:1.0.0
+ 1064  docker version
+ 1065  docker push mwoodpatrick/new-api:1.0.0
+ 1066  docker tag mwoodpatrick/new-api:1.0 mwoodpatrick/new-api:1.0.0
+ 1067  docker tag mwoodpatrick/new-api:1.0.0 mwoodpatrick/new-api:1.0.0
+ 1068  docker push mwoodpatrick/new-api:1.0.0
+ 1069  docker logout
+ 1070  docker login
+ 1071  docker push mwoodpatrick/new-api:1.0.0
+ 1072  ht
+ 1073  hl
