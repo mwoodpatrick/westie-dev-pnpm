@@ -37,3 +37,6 @@
 [submodule "apps/workshop-astra-block"]
 	path = apps/workshop-astra-block
 	url = https://github.com/datastaxdevs/workshop-astra-block.git
+[submodule "apps/techishiring-website"]
+	path = apps/techishiring-website
+	url = https://github.com/TechIsHiring/techishiring-website.git
