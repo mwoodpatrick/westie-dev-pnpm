@@ -7,7 +7,7 @@
 #   k3d demo repository: https://github.com/iwilltry42/k3d-demo/blob/main/README.md#config-file-support
 #   SUSE Blog: https://www.suse.com/c/introduction-k3d-run-k3s-docker-src/ (Search for The “Configuration as Code” Way)
 #
-apiVersion: k3d.io/v1alpha4 # this will change in the future as we make everything more stable
+apiVersion: k3d.io/v1alpha5 # this will change in the future as we make everything more stable
 kind: Simple # internally, we also have a Cluster config, which is not yet available externally
 metadata:
   name: westie-cluster # name that you want to give to your cluster (will still be prefixed with `k3d-`)
