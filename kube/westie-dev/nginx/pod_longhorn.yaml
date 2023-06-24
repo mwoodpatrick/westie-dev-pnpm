@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: volume-test
+  name: longhorn-volume-test
   namespace: default
 spec:
   containers:
-  - name: volume-test
+  - name: longhorn-volume-test
     image: nginx:stable-alpine
     imagePullPolicy: IfNotPresent
     volumeMounts:
-    - name: volv
+    - name: longhorn-volv
       mountPath: /data
     ports:
     - containerPort: 80
   volumes:
-  - name: volv
+  - name: longhorn-volv
     persistentVolumeClaim:
       claimName: longhorn-volv-pvc
