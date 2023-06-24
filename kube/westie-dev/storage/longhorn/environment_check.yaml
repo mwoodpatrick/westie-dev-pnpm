@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: longhorn-environment-check
+  name: longhorn-environment-check
+spec:
+  selector:
+    matchLabels:
+      app: longhorn-environment-check
+  template:
+    metadata:
+      labels:
+        app: longhorn-environment-check
+    spec:
+      hostPID: true
+      containers:
+      - name: longhorn-environment-check
+        image: alpine:3.12
+        args: ["/bin/sh", "-c", "sleep 1000000000"]
+        volumeMounts:
+        - name: mountpoint
+          mountPath: /tmp/longhorn-environment-check
+          mountPropagation: Bidirectional
+        securityContext:
+          privileged: true
+      volumes:
+      - name: mountpoint
+        hostPath:
+            path: /tmp/longhorn-environment-check
