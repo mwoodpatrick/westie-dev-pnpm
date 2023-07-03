@@ -1,3 +1,13 @@
+#!/usr/bin/env bash
+# Install OpenEBS
+# https://openebs.io/docs/user-guides/localpv-hostpath
+
+helm repo add openebs https://openebs.github.io/charts
+helm repo update
+helm install openebs --namespace openebs openebs/openebs --create-namespace
+
+kubectl get storageclasses
+
 kubectl apply -f https://openebs.github.io/charts/examples/local-hostpath/local-hostpath-pvc.yaml
 kubectl apply -f https://openebs.github.io/charts/examples/local-hostpath/local-hostpath-pod.yaml
 kubectl get pod hello-local-hostpath-pod
