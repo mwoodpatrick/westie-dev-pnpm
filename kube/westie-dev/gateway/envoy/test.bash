@@ -1,3 +1,6 @@
+# Envoy Gateway example
+# https://tetrate.io/hands-on-with-the-gateway-api-using-envoy-gateway-0-2/
+
 minikube start –driver=docker --cpus=2 --memory=2g
 kubectl apply -f https://github.com/envoyproxy/gateway/releases/download/v0.2.0/install.yaml
 kubectl get pods --namespace gateway-system
