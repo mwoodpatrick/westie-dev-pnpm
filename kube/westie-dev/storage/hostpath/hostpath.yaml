@@ -17,11 +17,11 @@ spec:
       volumes:
         - name: home-directory
           hostPath:
-            path: /home/admin
+            path: /home/mwoodpatrick
             type: Directory
         - name: project-directory
           hostPath:
-            path: /mnt/wsl/projects
+            path: /projects
             type: Directory
       containers:
       - name: nginx
@@ -30,6 +30,6 @@ spec:
         - containerPort: 80
         volumeMounts:
          - name: home-directory
-           mountPath: /home/admin
+           mountPath: /home/mwoodpatrick
          - name: project-directory
            mountPath: /projects
