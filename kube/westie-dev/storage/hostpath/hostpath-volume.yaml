@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-test-app
+spec:
+  containers:
+  - name: my-app
+    image: nginx
+    ports:
+    - containerPort: 8080
+    volumeMounts:
+    - name: my-volume
+      mountPath: /app
+  volumes:
+  - name: my-volume
+    hostPath:
+      path: /projects
