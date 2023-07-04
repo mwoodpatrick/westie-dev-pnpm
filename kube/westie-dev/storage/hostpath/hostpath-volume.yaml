@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-test-app
+  name: my-hostpath-app
 spec:
   containers:
-  - name: my-app
+  - name: my-hostpath-app
     image: nginx
     ports:
     - containerPort: 8080
     volumeMounts:
-    - name: my-volume
-      mountPath: /app
+    - name: my-shared-projects-volume
+      mountPath: /projects
   volumes:
-  - name: my-volume
+  - name: my-shared-projects-volume
     hostPath:
       path: /projects
