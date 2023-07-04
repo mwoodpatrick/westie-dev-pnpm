@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-empty-app
+spec:
+  containers:
+  - name: my-empty-app
+    image: nginx
+    ports:
+    - containerPort: 8080
+    imagePullPolicy: Always
+    volumeMounts:
+    - name: my-empty-volume
+      mountPath: /my-temp-volume
+  volumes:
+  - name: my-empty-volume
+    emptyDir: {} 
