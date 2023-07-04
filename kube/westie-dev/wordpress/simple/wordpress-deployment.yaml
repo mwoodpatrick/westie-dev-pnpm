@@ -64,7 +64,12 @@ spec:
         volumeMounts:
         - name: wordpress-persistent-storage
           mountPath: /var/www/html
+        - name: my-shared-projects-volume
+          mountPath: /projects
       volumes:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
           claimName: wp-pv-claim
+      - name: my-shared-projects-volume
+        hostPath:
+          path: /projects
