@@ -11,7 +11,12 @@ spec:
     volumeMounts:
     - name: my-shared-projects-volume
       mountPath: /projects
+    - name: my-home-volume
+      mountPath: /home/mwoodpatrick
   volumes:
   - name: my-shared-projects-volume
     hostPath:
       path: /projects
+  - name: my-home-volume
+    hostPath:
+      path: /home/mwoodpatrick
