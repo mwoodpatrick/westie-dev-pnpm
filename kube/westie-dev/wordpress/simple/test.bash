@@ -46,9 +46,10 @@ function wp-get-pods {
 
 function wp-ssh-pod {
     local pod=$1
+    shift
     echo "execing into pod $pod"
     echo kt -n $TEST_NS exec -it $pod -- bash
-    kt -n $TEST_NS exec -it $pod -- bash
+    kt exec -n $TEST_NS -it $pod -- bash
 }
 
 function create-or-update {
