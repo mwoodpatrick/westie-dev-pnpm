@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # https://www.kubermatic.com/blog/keeping-the-state-of-apps-1-introduction-to-volume-and-volumemounts/
 set -x
 kubectl create -f hostpath-volume.yaml
