@@ -43,3 +43,9 @@
 [submodule "kube/westie-dev/k3d-metallb-starter-kit"]
 	path = kube/westie-dev/k3d-metallb-starter-kit
 	url = https://github.com/mwoodpatrick/k3d-metallb-starter-kit
+[submodule "kube/bitnami/charts"]
+	path = kube/bitnami/charts
+	url = https://github.com/bitnami/charts.git
+[submodule "kube/bitnami/containers"]
+	path = kube/bitnami/containers
+	url = https://github.com/bitnami/containers.git
