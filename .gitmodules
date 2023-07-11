@@ -40,3 +40,6 @@
 [submodule "apps/techishiring-website"]
 	path = apps/techishiring-website
 	url = https://github.com/TechIsHiring/techishiring-website.git
+[submodule "kube/westie-dev/k3d-metallb-starter-kit"]
+	path = kube/westie-dev/k3d-metallb-starter-kit
+	url = https://github.com/mwoodpatrick/k3d-metallb-starter-kit
