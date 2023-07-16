@@ -1,0 +1,191 @@
+++ k3d cluster create --api-port 6550 -p 8081:80@loadbalancer --agents 2 --k3s-arg --disable=traefik@server:0 --wait
+[36mINFO[0m[0000] portmapping '8081:80' targets the loadbalancer: defaulting to [servers:*:proxy agents:*:proxy] 
+[36mINFO[0m[0000] Prep: Network                                
+[36mINFO[0m[0000] Created network 'k3d-k3s-default'            
+[36mINFO[0m[0000] Created image volume k3d-k3s-default-images  
+[36mINFO[0m[0000] Starting new tools node...                   
+[36mINFO[0m[0000] Starting Node 'k3d-k3s-default-tools'        
+[36mINFO[0m[0001] Creating node 'k3d-k3s-default-server-0'     
+[36mINFO[0m[0001] Creating node 'k3d-k3s-default-agent-0'      
+[36mINFO[0m[0001] Creating node 'k3d-k3s-default-agent-1'      
+[36mINFO[0m[0001] Creating LoadBalancer 'k3d-k3s-default-serverlb' 
+[36mINFO[0m[0001] Using the k3d-tools node to gather environment information 
+[36mINFO[0m[0001] HostIP: using network gateway 192.168.80.1 address 
+[36mINFO[0m[0001] Starting cluster 'k3s-default'               
+[36mINFO[0m[0001] Starting servers...                          
+[36mINFO[0m[0001] Starting Node 'k3d-k3s-default-server-0'     
+[36mINFO[0m[0005] Starting agents...                           
+[36mINFO[0m[0005] Starting Node 'k3d-k3s-default-agent-1'      
+[36mINFO[0m[0005] Starting Node 'k3d-k3s-default-agent-0'      
+[36mINFO[0m[0008] Starting helpers...                          
+[36mINFO[0m[0008] Starting Node 'k3d-k3s-default-serverlb'     
+[36mINFO[0m[0014] Injecting records for hostAliases (incl. host.k3d.internal) and for 4 network members into CoreDNS configmap... 
+[36mINFO[0m[0016] Cluster 'k3s-default' created successfully!  
+[36mINFO[0m[0016] You can now use it like this:                
+kubectl cluster-info
+++ helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx --namespace ingress-nginx --create-namespace
+Release "ingress-nginx" does not exist. Installing it now.
+E0716 04:23:46.388849  439458 memcache.go:287] couldn't get resource list for metrics.k8s.io/v1beta1: the server is currently unable to handle the request
+E0716 04:23:46.401223  439458 memcache.go:121] couldn't get resource list for metrics.k8s.io/v1beta1: the server is currently unable to handle the request
+NAME: ingress-nginx
+LAST DEPLOYED: Sun Jul 16 04:23:46 2023
+NAMESPACE: ingress-nginx
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+The ingress-nginx controller has been installed.
+It may take a few minutes for the LoadBalancer IP to be available.
+You can watch the status by running 'kubectl --namespace ingress-nginx get services -o wide -w ingress-nginx-controller'
+
+An example Ingress that makes use of the controller:
+  apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    name: example
+    namespace: foo
+  spec:
+    ingressClassName: nginx
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - pathType: Prefix
+              backend:
+                service:
+                  name: exampleService
+                  port:
+                    number: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+      - hosts:
+        - www.example.com
+        secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: foo
+  data:
+    tls.crt: <base64 encoded cert>
+    tls.key: <base64 encoded key>
+  type: kubernetes.io/tls
+++ kubectl apply -f nginx.yaml
+deployment.apps/nginx-deployment created
+service/nginx-service created
+Error from server (InternalError): error when creating "nginx.yaml": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": failed to call webhook: Post "https://ingress-nginx-controller-admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s": no endpoints available for service "ingress-nginx-controller-admission"
+++ kubectl apply -f nginx.yaml
+deployment.apps/nginx-deployment unchanged
+service/nginx-service unchanged
+Error from server (InternalError): error when creating "nginx.yaml": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": failed to call webhook: Post "https://ingress-nginx-controller-admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s": no endpoints available for service "ingress-nginx-controller-admission"
+++ sleep 10
+++ kubectl apply -f nginx.yaml
+deployment.apps/nginx-deployment unchanged
+service/nginx-service unchanged
+Error from server (InternalError): error when creating "nginx.yaml": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": failed to call webhook: Post "https://ingress-nginx-controller-admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s": no endpoints available for service "ingress-nginx-controller-admission"
+++ sleep 10
+++ kubectl apply -f nginx.yaml
+deployment.apps/nginx-deployment unchanged
+service/nginx-service unchanged
+ingress.networking.k8s.io/nginx-ingress created
+++ ip=
+++ '[' -z ']'
+++ echo 'Waiting for external IP'
+Waiting for external IP
++++ kubectl get ingress/nginx-ingress '--template={{range .status.loadBalancer.ingress}}{{.ip}}{{end}}'
+++ ip=
+++ '[' -z '' ']'
+++ sleep 10
+++ '[' -z ']'
+++ echo 'Waiting for external IP'
+Waiting for external IP
++++ kubectl get ingress/nginx-ingress '--template={{range .status.loadBalancer.ingress}}{{.ip}}{{end}}'
+++ ip=
+++ '[' -z '' ']'
+++ sleep 10
+++ '[' -z ']'
+++ echo 'Waiting for external IP'
+Waiting for external IP
++++ kubectl get ingress/nginx-ingress '--template={{range .status.loadBalancer.ingress}}{{.ip}}{{end}}'
+++ ip=
+++ '[' -z '' ']'
+++ sleep 10
+++ '[' -z ']'
+++ echo 'Waiting for external IP'
+Waiting for external IP
++++ kubectl get ingress/nginx-ingress '--template={{range .status.loadBalancer.ingress}}{{.ip}}{{end}}'
+++ ip=
+++ '[' -z '' ']'
+++ sleep 10
+++ '[' -z ']'
+++ echo 'Waiting for external IP'
+Waiting for external IP
++++ kubectl get ingress/nginx-ingress '--template={{range .status.loadBalancer.ingress}}{{.ip}}{{end}}'
+++ ip=
+++ '[' -z '' ']'
+++ sleep 10
+++ '[' -z ']'
+++ echo 'Waiting for external IP'
+Waiting for external IP
++++ kubectl get ingress/nginx-ingress '--template={{range .status.loadBalancer.ingress}}{{.ip}}{{end}}'
+++ ip=192.168.80.2192.168.80.3192.168.80.4
+++ '[' -z 192.168.80.2192.168.80.3192.168.80.4 ']'
+++ '[' -z 192.168.80.2192.168.80.3192.168.80.4 ']'
+++ echo 'Found external IP: 192.168.80.2192.168.80.3192.168.80.4'
+Found external IP: 192.168.80.2192.168.80.3192.168.80.4
+++ docker ps
+CONTAINER ID   IMAGE                            COMMAND                  CREATED              STATUS              PORTS                                                             NAMES
+8f7c1f400787   ghcr.io/k3d-io/k3d-proxy:5.5.1   "/bin/sh -c nginx-pr…"   About a minute ago   Up About a minute   0.0.0.0:8081->80/tcp, :::8081->80/tcp, 0.0.0.0:6550->6443/tcp     k3d-k3s-default-serverlb
+b8a0c6df443a   rancher/k3s:v1.26.4-k3s1         "/bin/k3s agent"         About a minute ago   Up About a minute                                                                     k3d-k3s-default-agent-1
+f6aa0acea9ac   rancher/k3s:v1.26.4-k3s1         "/bin/k3s agent"         About a minute ago   Up About a minute                                                                     k3d-k3s-default-agent-0
+21f22bf61030   rancher/k3s:v1.26.4-k3s1         "/bin/k3s server --d…"   About a minute ago   Up About a minute                                                                     k3d-k3s-default-server-0
+83db98198a8f   ghcr.io/k3d-io/k3d-proxy:5.5.1   "/bin/sh -c nginx-pr…"   25 hours ago         Up 25 hours         0.0.0.0:8080->80/tcp, :::8080->80/tcp, 127.0.0.1:6445->6443/tcp   k3d-westie-dev-config-serverlb
+f069a9988ea0   rancher/k3s:v1.26.4-k3s1         "/bin/k3s agent"         25 hours ago         Up 25 hours                                                                           k3d-westie-dev-config-agent-2
+7b6290365c16   rancher/k3s:v1.26.4-k3s1         "/bin/k3s agent"         25 hours ago         Up 25 hours                                                                           k3d-westie-dev-config-agent-1
+e1d1839844ce   rancher/k3s:v1.26.4-k3s1         "/bin/k3s agent"         25 hours ago         Up 25 hours                                                                           k3d-westie-dev-config-agent-0
+8cadd577f825   rancher/k3s:v1.26.4-k3s1         "/bin/k3s server --t…"   25 hours ago         Up 25 hours                                                                           k3d-westie-dev-config-server-0
+++ kubectl get nodes
+NAME                       STATUS   ROLES                  AGE    VERSION
+k3d-k3s-default-server-0   Ready    control-plane,master   102s   v1.26.4+k3s1
+k3d-k3s-default-agent-0    Ready    <none>                 99s    v1.26.4+k3s1
+k3d-k3s-default-agent-1    Ready    <none>                 100s   v1.26.4+k3s1
+++ kubectl get svc
+NAME            TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+kubernetes      ClusterIP   10.43.0.1     <none>        443/TCP   103s
+nginx-service   ClusterIP   10.43.54.64   <none>        80/TCP    73s
+++ kubectl get ingress/nginx
+Error from server (NotFound): ingresses.networking.k8s.io "nginx" not found
+++ curl --fail localhost:8081/
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   612  100   612    0     0   233k      0 --:--:-- --:--:-- --:--:--  298k
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+++ set +x
