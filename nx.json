@@ -3,29 +3,52 @@
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": ["build"],
+        "cacheableOperations": [
+          "build"
+        ],
         "accessToken": "Mzk5NzRjODQtNThkYS00OWJhLWJmNjEtYmQwNDVjNDUzODhkfHJlYWQtd3JpdGU="
       }
     }
   },
   "namedInputs": {
-    "noMarkdown": ["!{projectRoot}/**/*.md"],
-    "production": ["default", "!{projectRoot}/src/test-setup.[jt]s"]
+    "noMarkdown": [
+      "!{projectRoot}/**/*.md"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/src/test-setup.[jt]s"
+    ]
   },
   "targetDefaults": {
     "build": {
-      "inputs": ["noMarkdown", "^noMarkdown"],
-      "outputs": ["{projectRoot}/dist"],
-      "dependsOn": ["^build", "pre-build"]
+      "inputs": [
+        "noMarkdown",
+        "^noMarkdown"
+      ],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
+      "dependsOn": [
+        "^build",
+        "pre-build"
+      ]
     },
     "dev": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ]
     },
     "test": {
-      "inputs": ["noMarkdown", "{workspaceRoot}/jest.preset.js"]
+      "inputs": [
+        "noMarkdown",
+        "{workspaceRoot}/jest.preset.js"
+      ]
     },
     "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json"
+      ]
     }
   }
 }
