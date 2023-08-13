@@ -49,3 +49,6 @@
 [submodule "kube/bitnami/containers"]
 	path = kube/bitnami/containers
 	url = https://github.com/bitnami/containers.git
+[submodule "kube/Bridge-To-Kubernetes"]
+	path = kube/Bridge-To-Kubernetes
+	url = https://github.com/mwoodpatrick/Bridge-To-Kubernetes.git

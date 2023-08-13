@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    meta.helm.sh/release-name: wordpress-1687702638
+    meta.helm.sh/release-namespace: default
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: wordpress-1687702638
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: wordpress
+    helm.sh/chart: wordpress-16.1.11
+  name: wordpress-1687702638
+  namespace: default
+  resourceVersion: "26839"
+  uid: 9928c565-347e-4e85-affa-4cc9a1980153
+spec:
+  ingressClassName: traefik
+    http:
+      paths:
+      - backend:
+          service:
+            name: wordpress-1687702638
+            port:
+              name: http
+        path: /wp
+        pathType: ImplementationSpecific
+status:
+  loadBalancer: {}

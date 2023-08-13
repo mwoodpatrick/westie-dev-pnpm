@@ -1,0 +1,42 @@
+## values for my wp WordPress install
+## @param wordpressUsername WordPress username
+##
+
+## @param global.storageClass Global StorageClass for Persistent Volume(s)
+##
+global:
+  imageRegistry: ""
+  ## E.g.
+  ## imagePullSecrets:
+  ##   - myRegistryKeySecretName
+  ##
+  imagePullSecrets: []
+  storageClass: "local-path"
+
+## @param kubeVersion Override Kubernetes version
+##
+kubeVersion: "0.1"
+## @param fullnameOverride String to fully override common.names.fullname template
+##
+fullnameOverride: "westie-wp"
+ 
+## @param nameOverride String to partially override common.names.fullname template (will maintain the release name)
+##
+# nameOverride: "westie.wp"
+ 
+wordpressUsername: admin
+
+##
+wordpressEmail: mwoodpatrick@gmail.com
+## @param wordpressFirstName WordPress user first name
+##
+wordpressFirstName: Mark
+## @param wordpressLastName WordPress user last name
+##
+wordpressLastName: Wood-Patrick
+## @param wordpressBlogName Blog name
+##
+wordpressBlogName: Mark's Blog!
+## @param wordpressTablePrefix Prefix to use for WordPress database tables
+##
+wordpressTablePrefix: wp_
