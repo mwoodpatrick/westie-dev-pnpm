@@ -17,11 +17,6 @@
 # Setup #
 #########
 
-# Replace `[...]` with the GitHub organization or user
-export GITHUB_ORG=[...]
-
-# Replace `[...]` with the GitHub token
-export GITHUB_TOKEN=[...]
 
 # Watch https://youtu.be/BII6ZY2Rnlc if you are not familiar with GitHub CLI
 gh repo fork vfarcic/devspace-vcluster-argocd-demo \
@@ -31,18 +26,10 @@ cd devspace-vcluster-argocd-demo
 
 # Create a Kubernetes cluster with an Ingress Controller
 
-# Replace `[...]` with the external IP of the Ingress service
-export INGRESS_HOST=[...]
 
 kubectl create namespace prs
 
 kubectl create namespace production
-
-# Replace `[...]` with the Docker Hub token
-export DOCKERHUB_TOKEN=[...]
-
-# Replace `[...]` with the Docker Hub user
-export DOCKERHUB_USERNAME=[...]
 
 gh secret set \
     DOCKERHUB_TOKEN -b$DOCKERHUB_TOKEN \
@@ -57,9 +44,6 @@ gh secret set GH_TOKEN -b$GITHUB_TOKEN \
 
 gh secret set GH_ORG -b$GITHUB_ORG \
     --repo $GITHUB_ORG/devspace-vcluster-argocd-demo
-
-# Replace the value with the path to Kube config
-export KUBECONFIG_PATH=~/.kube/config
 
 gh secret set KUBE_CONFIG  \
     --repo $GITHUB_ORG/devspace-vcluster-argocd-demo \
