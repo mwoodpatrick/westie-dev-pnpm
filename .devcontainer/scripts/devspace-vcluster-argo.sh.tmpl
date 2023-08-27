@@ -19,17 +19,23 @@
 
 
 # Watch https://youtu.be/BII6ZY2Rnlc if you are not familiar with GitHub CLI
-gh repo fork vfarcic/devspace-vcluster-argocd-demo \
-    --clone
+gh repo fork vfarcic/devspace-vcluster-argocd-demo --clone
 
 cd devspace-vcluster-argocd-demo
 
 # Create a Kubernetes cluster with an Ingress Controller
-
+# see westie-dev-pnpm/kube/westie-dev/k3d-metallb-starter-kit/scripts/simple_cluster_config/ingress/nginx/install.sh
 
 kubectl create namespace prs
 
 kubectl create namespace production
+
+install github cli
+
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg;
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null;
+sudo apt update &&
+sudo apt install gh
 
 gh secret set \
     DOCKERHUB_TOKEN -b$DOCKERHUB_TOKEN \
