@@ -26,6 +26,9 @@ cd devspace-vcluster-argocd-demo
 # Create a Kubernetes cluster with an Ingress Controller
 # see westie-dev-pnpm/kube/westie-dev/k3d-metallb-starter-kit/scripts/simple_cluster_config/ingress/nginx/install.sh
 
+cd /mnt/wsl/projects/git/westie-dev-pnpm/kube/westie-dev/k3d-metallb-starter-kit/scripts/simple_cluster_config 
+source install.sh
+
 kubectl create namespace prs
 
 kubectl create namespace production
