@@ -1,0 +1,10 @@
+[Unit]
+Description=Keep Linux clock in sync with Windows clock
+
+[Timer]
+OnBootSec=10min
+# OnUnitActiveSec=1min
+OnCalendar=*:0/1
+
+[Install]
+    WantedBy=timers.target

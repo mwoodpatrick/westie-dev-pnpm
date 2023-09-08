@@ -1,0 +1,14 @@
+[Unit]
+Description=Update Linux clock
+StopWhenUnneeded=yes
+
+[Service]
+Type=simple
+
+ExecStartPre=echo "before updateing clock" > /dev/kmsg
+ExecStart=echo "ntpdate time.windows.com" > /dev/kmsg
+# ExecStart=wall "hello world"
+ExecStartPost=echo "before updateing clock" > /dev/kmsg
+# ExecStart=
+# ExecStop=
+# SuccessA
