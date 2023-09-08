@@ -1,0 +1,216 @@
+# Source: https://gist.github.com/ed8ad113fff4322ef309198d5455687f
+
+##############################################################################################
+# Full App Lifecycle In Kubernetes With Argo CD, DevSpace, vCluster, k3d, and GitHub Actions #
+# https://youtu.be/uU-EAQ8Vbvk                                                               #
+##############################################################################################
+
+# Referenced videos:
+# - How To Create Virtual Kubernetes Clusters With vcluster By loft: https://youtu.be/JqBjpvp268Y
+# - DevSpace - Development Environments in Kubernetes: https://youtu.be/nQly_CEjJc4
+# - Github Actions Review And Tutorial: https://youtu.be/eZcAvTb0rbA
+# - Argo CD - Applying GitOps Principles To Manage Production Environment In Kubernetes: https://youtu.be/vpWQeoaiRM4
+# - K3d - How to run Kubernetes cluster locally using Rancher k3s: https://youtu.be/mCesuGk-Fks
+# - GitHub CLI - How to manage repositories more efficiently: https://youtu.be/BII6ZY2Rnlc
+
+#########
+# Setup #
+#########
+
+
+# Watch https://youtu.be/BII6ZY2Rnlc if you are not familiar with GitHub CLI
+gh repo fork vfarcic/devspace-vcluster-argocd-demo --clone
+
+cd devspace-vcluster-argocd-demo
+
+# Create a Kubernetes cluster with an Ingress Controller
+# see westie-dev-pnpm/kube/westie-dev/k3d-metallb-starter-kit/scripts/simple_cluster_config/ingress/nginx/install.sh
+
+cd /mnt/wsl/projects/git/westie-dev-pnpm/kube/westie-dev/k3d-metallb-starter-kit/scripts/simple_cluster_config 
+source install.sh
+
+kubectl create namespace prs
+
+kubectl create namespace production
+
+install github cli
+
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg;
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null;
+sudo apt update &&
+sudo apt install gh
+
+gh secret set \
+    DOCKERHUB_TOKEN -b$DOCKERHUB_TOKEN \
+    --repo $GITHUB_ORG/devspace-vcluster-argocd-demo
+
+gh secret set \
+    DOCKERHUB_USERNAME -b$DOCKERHUB_USERNAME \
+    --repo $GITHUB_ORG/devspace-vcluster-argocd-demo
+
+gh secret set GH_TOKEN -b$GITHUB_TOKEN \
+    --repo $GITHUB_ORG/devspace-vcluster-argocd-demo
+
+gh secret set GH_ORG -b$GITHUB_ORG \
+    --repo $GITHUB_ORG/devspace-vcluster-argocd-demo
+
+gh secret set KUBE_CONFIG  \
+    --repo $GITHUB_ORG/devspace-vcluster-argocd-demo \
+    < $KUBECONFIG_PATH
+
+cat kustomize/overlays/production/ingress.yaml \
+    | sed -e "s@host: .*@host: devops-toolkit.$INGRESS_HOST.nip.io@g" \
+    | tee kustomize/overlays/production/ingress.yaml
+
+git add .
+
+git commit -m "Personalization"
+
+git push
+
+cd ..
+
+#################
+# Setup Argo CD #
+#################
+
+# Watch https://youtu.be/vpWQeoaiRM4 if you are not familiar with GitHub CLI
+helm repo add argo \
+    https://argoproj.github.io/argo-helm
+
+helm repo update
+
+helm upgrade --install \
+    argocd argo/argo-cd \
+    --namespace argocd \
+    --create-namespace \
+    --set server.ingress.hosts="{argo-cd.$INGRESS_HOST.nip.io}" \
+    --set server.ingress.enabled=true \
+    --set server.extraArgs="{--insecure}" \
+    --set controller.args.appResyncPeriod=30 \
+    --wait
+
+export PASS=$(kubectl \
+    --namespace argocd \
+    get secret argocd-initial-admin-secret \
+    --output jsonpath="{.data.password}" \
+    | base64 --decode)
+
+argocd login \
+    --insecure \
+    --username admin \
+    --password $PASS \
+    --grpc-web \
+    argo-cd.$INGRESS_HOST.nip.io
+
+argocd account update-password \
+    --current-password $PASS \
+    --new-password admin123
+
+echo http://argo-cd.$INGRESS_HOST.nip.io
+
+# Open it in a browser
+
+# Use `admin` as the username and `admin123` as the password
+
+gh repo fork vfarcic/devspace-vcluster-argocd-prod \
+    --clone
+
+cd devspace-vcluster-argocd-prod
+
+export APP_REPO_URL=https://github.com/$GITHUB_ORG/devspace-vcluster-argocd-demo
+
+export PROD_REPO_URL=https://github.com/$GITHUB_ORG/devspace-vcluster-argocd-prod
+
+cat production/devops-toolkit.yaml \
+    | sed -e "s@repoURL: .*@repoURL: $APP_REPO_URL@g" \
+    | sed -e "s@- .*/devops-toolkit@- $DOCKERHUB_USERNAME/devops-toolkit@g" \
+    | tee production/devops-toolkit.yaml
+
+cat apps.yaml \
+    | sed -e "s@repoURL: .*@repoURL: $PROD_REPO_URL@g" \
+    | tee apps.yaml
+
+git add .
+
+git commit -m "Personalization"
+
+git push
+
+kubectl apply --filename project.yaml
+
+kubectl apply --filename apps.yaml
+
+cd ..
+
+#####################
+# Local development #
+#####################
+
+cd devspace-vcluster-argocd-demo
+
+# Please watch https://youtu.be/mCesuGk-Fks if you are not familiar with k3d
+# Feel free to use any other Kubernetes platform
+k3d cluster create --config k3d.yaml
+
+kubectl create namespace dev
+
+# Please watch https://youtu.be/nQly_CEjJc4 if you are not familiar with DevSpace
+devspace use namespace dev
+
+devspace dev
+
+# Change config.toml using your favorite editor
+
+# ctrl+c
+
+exit
+
+k3d cluster delete devops-toolkit
+
+########################
+# Preview environments #
+########################
+
+# Watch https://youtu.be/eZcAvTb0rbA if you are not familiar with GitHub Actions
+ls -1 .github/workflows/
+
+cat .github/workflows/pr-open.yaml
+
+# If using a Kubernetes platform that references additional tools in Kube config (e.g., GKE needs `gcloud` and EKS requires the authenticator), you might need to use a more specific step instead of `azure/k8s-set-context@v1`
+
+git checkout -b my-feature
+
+git add .
+
+git commit -m "My feature"
+
+git push --set-upstream origin my-feature
+
+gh pr create --title "What is this?" \
+    --body "I'm too lazy to write a description"
+
+# Open the PR link from the output
+
+# Watch https://youtu.be/JqBjpvp268Y if you are not familiar with vCluster
+vcluster list
+
+# It should be a great addition to add a comment to the PR with the URL of the app
+
+cat .github/workflows/pr-close.yaml
+
+# Merge the PR
+
+vcluster list
+
+##########################
+# Production environment #
+##########################
+
+cat .github/workflows/main.yaml
+
+###########
+# Destroy #
+###########
+
+# Destroy the remote cluster
