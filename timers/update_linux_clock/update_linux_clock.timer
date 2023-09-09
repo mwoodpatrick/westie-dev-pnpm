@@ -1,10 +1,11 @@
 [Unit]
-Description=Keep Linux clock in sync with Windows clock
+Description=Keep WSL clock in sync with NTP service
+Requires=ntpdate.service
 
 [Timer]
-OnBootSec=10min
-# OnUnitActiveSec=1min
-OnCalendar=*:0/1
+Unit=ntpdw
+# invoke the ntpdate.service unit every minute
+OnCalendar=*-*-* *:*:00
 
 [Install]
-    WantedBy=timers.target
+WantedBy=timers.target

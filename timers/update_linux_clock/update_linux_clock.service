@@ -1,14 +1,19 @@
+# This service unit is for testing timer units 
+# By David Both
+# Licensed under GPL V2
+#
+# https://opensource.com/article/20/7/systemd-timers
+#
+
 [Unit]
-Description=Update Linux clock
-StopWhenUnneeded=yes
+Description=Logs system statistics to the systemd journal
+Wants=myMonitor.timer
 
 [Service]
-Type=simple
+Type=oneshot
+# Add another task to the service by adding more lines of the form
+ExecStart=/usr/bin/free
+ExecStart=/usr/bin/lsblk
 
-ExecStartPre=echo "before updateing clock" > /dev/kmsg
-ExecStart=echo "ntpdate time.windows.com" > /dev/kmsg
-# ExecStart=wall "hello world"
-ExecStartPost=echo "before updateing clock" > /dev/kmsg
-# ExecStart=
-# ExecStop=
-# SuccessA
+[Install]
+WantedBy=multi-user.target
