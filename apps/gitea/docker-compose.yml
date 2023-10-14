@@ -1,8 +1,10 @@
 version: "3.8"
 
 services:
-  db:
+  pgdb:
     image: postgres:bullseye
+    container_name: postgres
+    hostname: postgres
     restart: always
     environment:
       - POSTGRES_USER=gitea
@@ -11,13 +13,30 @@ services:
     volumes:
       - ./postgres:/var/lib/postgresql/data
 
+  pgadmin:
+    depends_on:
+      - pgdb
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    hostname: pgadmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: mwoodpatrick@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: myPgAdmin1287
+    volumes:
+      - ./pgadmin-data:/var/lib/pgadmin
+
   gitea:
     depends_on:
-      - db
+      - pgdb
     image: gitea/gitea:latest-rootless
+    container_name: gitea
+    hostname: gitea
     environment:
       - GITEA__database__DB_TYPE=postgres
-      - GITEA__database__HOST=db:5432
+      - GITEA__database__HOST=pgdb:5432
       - GITEA__database__NAME=gitea
       - GITEA__database__USER=gitea
       - GITEA__database__PASSW==gitea
@@ -33,4 +52,50 @@ services:
     ports:
       - "3000:3000"
       - "2222:2222"
+
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    hostname: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: mysqladmin
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+    volumes:
+      - ./mariadb-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  wordpress:
+     depends_on:
+       - mariadb
+     image: wordpress:latest
+     container_name: wp
+     hostname: wp
+     volumes:
+       - ./wp_data:/var/www/html
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: mariadb:3306
+       WORDPRESS_DB_USER: admin
+       WORDPRESS_DB_PASSWORD: password
+       WORDPRESS_DB_NAME: wordpress
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    hostname: phpmyadmin
+    environment:
+      PMA_HOST: mariadb
+      PMA_PORT: 3306
+      MYSQL_USERNAME: 'root'
+      MYSQL_ROOT_PASSWORD: 'mysqladmin'
+    restart: always
+    ports:
+      - 8082:80
+    volumes:
+      - ./phpmyadmin_sessions:/sessions
 
