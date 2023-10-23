@@ -1,15 +1,4 @@
 {
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "cacheableOperations": [
-          "build"
-        ],
-        "accessToken": "Mzk5NzRjODQtNThkYS00OWJhLWJmNjEtYmQwNDVjNDUzODhkfHJlYWQtd3JpdGU="
-      }
-    }
-  },
   "namedInputs": {
     "noMarkdown": [
       "!{projectRoot}/**/*.md"
@@ -31,7 +20,8 @@
       "dependsOn": [
         "^build",
         "pre-build"
-      ]
+      ],
+      "cache": true
     },
     "dev": {
       "dependsOn": [
@@ -50,5 +40,6 @@
         "{workspaceRoot}/.eslintrc.json"
       ]
     }
-  }
+  },
+  "nxCloudAccessToken": "Mzk5NzRjODQtNThkYS00OWJhLWJmNjEtYmQwNDVjNDUzODhkfHJlYWQtd3JpdGU="
 }

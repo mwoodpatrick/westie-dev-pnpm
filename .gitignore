@@ -8,3 +8,5 @@ save
 .slack
 pnpm-lock.yaml
 migrations.json
+
+.nx/cache
