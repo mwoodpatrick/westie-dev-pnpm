@@ -3,12 +3,11 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/svc-products/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "target": "node",
         "compiler": "tsc",
@@ -16,9 +15,7 @@
         "main": "apps/svc-products/src/main.ts",
         "tsConfig": "apps/svc-products/tsconfig.app.json",
         "generatePackageJson": true,
-        "assets": [
-          "apps/svc-products/src/assets"
-        ]
+        "assets": ["apps/svc-products/src/assets"]
       },
       "configurations": {
         "production": {
@@ -46,26 +43,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
-      "options": {
-        "lintFilePatterns": [
-          "apps/svc-products/**/*.ts"
-        ]
-      }
+      "executor": "@nx/eslint:lint"
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/svc-products/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/svc-products/jest.config.ts"
       }
     }
-  },
-  "tags": []
+  }
 }
