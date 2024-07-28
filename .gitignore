@@ -10,3 +10,6 @@ pnpm-lock.yaml
 migrations.json
 
 .nx/cache
+
+
+.nx/workspace-data

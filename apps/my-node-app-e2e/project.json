@@ -2,16 +2,22 @@
   "name": "my-node-app-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "implicitDependencies": ["my-node-app"],
+  "implicitDependencies": [
+    "my-node-app"
+  ],
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{e2eProjectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/my-node-app-e2e/jest.config.ts",
         "passWithNoTests": true
       },
-      "dependsOn": ["my-node-app:build"]
+      "dependsOn": [
+        "my-node-app:build"
+      ]
     },
     "lint": {
       "executor": "@nx/eslint:lint"

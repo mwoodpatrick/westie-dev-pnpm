@@ -1,7 +1,8 @@
 {
   "namedInputs": {
     "noMarkdown": ["!{projectRoot}/**/*.md"],
-    "production": ["default", "!{projectRoot}/src/test-setup.[jt]s"]
+    "production": ["default", "!{projectRoot}/src/test-setup.[jt]s"],
+    "sharedGlobals": ["{workspaceRoot}/go.work"]
   },
   "targetDefaults": {
     "build": {
@@ -37,5 +38,8 @@
     }
   },
   "nxCloudAccessToken": "Mzk5NzRjODQtNThkYS00OWJhLWJmNjEtYmQwNDVjNDUzODhkfHJlYWQtd3JpdGU=",
-  "useInferencePlugins": false
+  "useInferencePlugins": false,
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "main",
+  "plugins": ["@monodon/rust", "@nx-go/nx-go"]
 }

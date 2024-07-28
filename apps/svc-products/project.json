@@ -7,7 +7,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "target": "node",
         "compiler": "tsc",
@@ -15,7 +17,9 @@
         "main": "apps/svc-products/src/main.ts",
         "tsConfig": "apps/svc-products/tsconfig.app.json",
         "generatePackageJson": true,
-        "assets": ["apps/svc-products/src/assets"]
+        "assets": [
+          "apps/svc-products/src/assets"
+        ]
       },
       "configurations": {
         "production": {
@@ -47,7 +51,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/svc-products/jest.config.ts"
       }

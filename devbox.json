@@ -1,8 +1,21 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.10.7/.schema/devbox.schema.json",
   "packages": [
-    "nodejs@22.2.0",
-    "nodePackages_latest.pnpm@latest"
+    "nodejs@latest",
+    "nodePackages_latest.pnpm@latest",
+    "go@latest",
+    "neovim@latest",
+    "delve@latest",
+    "mkcert@latest",
+    "direnv@latest",
+    "git@latest",
+    "gh@latest",
+    "firefox@latest",
+    "nss@latest",
+    "google-chrome@latest",
+    "gox@latest",
+    "rustup@latest",
+    "libiconv@latest"
   ],
   "shell": {
     "init_hook": [
