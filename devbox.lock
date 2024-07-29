@@ -451,6 +451,44 @@
         }
       }
     },
+    "neovide@latest": {
+      "last_modified": "2024-07-24T00:53:51Z",
+      "resolved": "github:NixOS/nixpkgs/4f02464258baaf54992debfd010a7a3662a25536#neovide",
+      "source": "devbox-search",
+      "version": "0.13.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/b5ijx892wd03mg5yv3449y4ihqjxq4sd-neovide-0.13.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/b5ijx892wd03mg5yv3449y4ihqjxq4sd-neovide-0.13.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/y4hpmp12k8ry15ks8bc0lajzd52wsb6i-neovide-0.13.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/y4hpmp12k8ry15ks8bc0lajzd52wsb6i-neovide-0.13.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gwk8qapnlb5k54vgwdncsglalaw41r1h-neovide-0.13.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/gwk8qapnlb5k54vgwdncsglalaw41r1h-neovide-0.13.3"
+        }
+      }
+    },
     "neovim@latest": {
       "last_modified": "2024-07-07T07:43:47Z",
       "resolved": "github:NixOS/nixpkgs/b60793b86201040d9dee019a05089a9150d08b5b#neovim",

@@ -15,7 +15,8 @@
     "google-chrome@latest",
     "gox@latest",
     "rustup@latest",
-    "libiconv@latest"
+    "libiconv@latest",
+    "neovide@latest"
   ],
   "shell": {
     "init_hook": [
