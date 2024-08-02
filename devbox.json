@@ -16,9 +16,10 @@
     "gox@latest",
     "rustup@latest",
     "libiconv@latest",
-    "neovide@latest"
+    "neovide@latest",
     "oh-my-zsh@latest",
-    "tree@2.1.3"
+    "tree@2.1.3",
+    "zsh@latest"
   ],
   "shell": {
     "init_hook": [
