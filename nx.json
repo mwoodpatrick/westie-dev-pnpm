@@ -1,7 +1,12 @@
 {
   "namedInputs": {
     "noMarkdown": ["!{projectRoot}/**/*.md"],
-    "production": ["default", "!{projectRoot}/src/test-setup.[jt]s"],
+    "production": [
+      "default",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json"
+    ],
     "sharedGlobals": ["{workspaceRoot}/go.work"]
   },
   "targetDefaults": {
@@ -37,6 +42,15 @@
       "inputs": ["production", "^production"]
     },
     "e2e": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "@nx/remix:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "@nx/vite:test": {
       "cache": true,
       "inputs": ["default", "^production"]
     }
