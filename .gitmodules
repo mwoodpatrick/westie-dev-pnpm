@@ -1,3 +1,7 @@
+
+[submodule "kubefirst/kubefirst-api"]
+	path = kubefirst/kubefirst-api
+	url = https://github.com/mwoodpatrick/kubefirst-api.git
 [submodule "kube/istio"]
 	path = kube/istio
 	url = https://github.com/mwoodpatrick/istio.git
