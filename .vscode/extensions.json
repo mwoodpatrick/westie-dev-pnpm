@@ -47,7 +47,8 @@
     "tungvn.wordpress-snippet",
     "xdebug.php-debug",
     "xyc.vscode-mdx-preview",
-    "yzhang.markdown-all-in-one"
+    "yzhang.markdown-all-in-one",
+    "ms-playwright.playwright"
   ],
   "unwantedRecommendations": []
 }
