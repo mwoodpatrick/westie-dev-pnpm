@@ -22,7 +22,8 @@
     "zsh@latest",
     "lua@latest",
     "eza@latest",
-    "bat@latest"
+    "bat@latest",
+    "fzf@latest"
   ],
   "shell": {
     "init_hook": [
