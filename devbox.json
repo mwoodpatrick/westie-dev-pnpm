@@ -24,7 +24,9 @@
   ],
   "shell": {
     "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
+      "echo 'Welcome to devbox!'",
+      "gh auth login --with-token < ~/my_github_token.txt",
+      "zsh"
     ],
     "scripts": {
       "test": [
