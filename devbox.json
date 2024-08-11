@@ -20,7 +20,9 @@
     "oh-my-zsh@latest",
     "tree@2.1.3",
     "zsh@latest",
-    "lua@latest"
+    "lua@latest",
+    "eza@latest",
+    "bat@latest"
   ],
   "shell": {
     "init_hook": [

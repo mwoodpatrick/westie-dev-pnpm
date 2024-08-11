@@ -1,6 +1,54 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "bat@latest": {
+      "last_modified": "2024-07-24T00:53:51Z",
+      "resolved": "github:NixOS/nixpkgs/4f02464258baaf54992debfd010a7a3662a25536#bat",
+      "source": "devbox-search",
+      "version": "0.24.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/prk010cj8rqhwl4zcy4xsdr6my7xrxff-bat-0.24.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/prk010cj8rqhwl4zcy4xsdr6my7xrxff-bat-0.24.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/h2j4dy50r2wn82vlykjcly7bh97vh2wa-bat-0.24.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/h2j4dy50r2wn82vlykjcly7bh97vh2wa-bat-0.24.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nz5ljy5vfgkkqvkc8llrnpkv7gs2rs6k-bat-0.24.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/nz5ljy5vfgkkqvkc8llrnpkv7gs2rs6k-bat-0.24.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/v0nq16qp8x4iy068xhhhs2n9c1rnb785-bat-0.24.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/v0nq16qp8x4iy068xhhhs2n9c1rnb785-bat-0.24.0"
+        }
+      }
+    },
     "delve@latest": {
       "last_modified": "2024-07-20T09:11:00Z",
       "resolved": "github:NixOS/nixpkgs/6e14bbce7bea6c4efd7adfa88a40dac750d80100#delve",
@@ -94,6 +142,74 @@
             }
           ],
           "store_path": "/nix/store/8l9j9kdv9m0z0s30lp4yvrc9s5bcbgmx-direnv-2.34.0"
+        }
+      }
+    },
+    "eza@latest": {
+      "last_modified": "2024-08-04T00:20:25Z",
+      "resolved": "github:NixOS/nixpkgs/f3834de3782b82bfc666abf664f946d0e7d1f116#eza",
+      "source": "devbox-search",
+      "version": "0.18.24",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6pcrcwz81ni29hyf8vwi5d73hsa5gzha-eza-0.18.24",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/qyz8y5k9vxzgj716gzz014v41scra7wb-eza-0.18.24-man",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6pcrcwz81ni29hyf8vwi5d73hsa5gzha-eza-0.18.24"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/j21wfv0i10nwmh9f7f3h3n0i4z0mb3ia-eza-0.18.24",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/2mfnz38mr04ix5yzjzjvznw5yv2jxj5m-eza-0.18.24-man",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/j21wfv0i10nwmh9f7f3h3n0i4z0mb3ia-eza-0.18.24"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4ypy8ry0mjv73wdj5ychms9fj657ycw4-eza-0.18.24",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/gafsbpz7xclk1skpwb9zd7n5l1lccyc5-eza-0.18.24-man",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/4ypy8ry0mjv73wdj5ychms9fj657ycw4-eza-0.18.24"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wxjf4iapbq9jc3xd7rrm29px91p2ln52-eza-0.18.24",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/1shdg4q01k0msfba6cjykyps9yb8g7xq-eza-0.18.24-man",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/wxjf4iapbq9jc3xd7rrm29px91p2ln52-eza-0.18.24"
         }
       }
     },
