@@ -26,6 +26,8 @@
     "init_hook": [
       "echo 'Welcome to devbox!'",
       "gh auth login --with-token < ~/my_github_token.txt",
+      "gh auth setup-git",
+      "gh auth status",
       "zsh"
     ],
     "scripts": {
